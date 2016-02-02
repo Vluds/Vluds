@@ -1,0 +1,84 @@
+*::selection {
+	background: rgba(255, 255, 255, 0.2);
+}
+
+*::-moz-selection {
+	background: rgba(255, 255, 255, 0.2);
+}
+
+*::-webkit-selection {
+	background: rgba(255, 255, 255, 0.2);
+}
+
+@font-face
+{
+	font-family: 'OpenSans-Light';
+	src: url('../fonts/Open-Sans/OpenSans-Light.ttf');
+}
+@font-face
+{
+	font-family: 'OpenSans-Regular';
+	src: url('../fonts/Open-Sans/OpenSans-Regular.ttf');
+}
+
+h1
+{
+	margin: 0;
+	font-family: 'OpenSans-Light';
+	font-weight: normal;
+	font-size: 7.5em;
+	color: rgb(56, 56, 56);
+}
+h2
+{
+	margin: 0;
+	font-family: 'OpenSans-Light';
+	font-weight: normal;
+	font-size: 3em;
+	color: rgb(74, 74, 74);
+}
+h3
+{
+	margin: 0;
+	font-family: 'OpenSans-Light';
+	font-weight: normal;
+	font-size: 2em;
+	color: rgb(74, 74, 74);
+}
+
+html
+{
+	height: 100%;
+}
+
+body
+{
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	background-color: rgb(238, 238, 238);
+}
+section#ajax-loader
+{
+	height: 100%;
+	width: 100%;
+}
+section#ajax-loader #ajax-container
+{
+	height: 100%;
+	width: 100%;
+}
+
+.button
+{
+	height: 55px;
+	line-height: 53px;
+	min-width: 150px;
+	border: 1px solid rgb(74, 74, 74);
+	border-radius: 50px;
+	box-sizing: border-box;
+	text-align: center;
+	padding-left: 10px;
+	padding-right: 10px;
+	cursor: pointer;
+}

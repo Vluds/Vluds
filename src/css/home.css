@@ -1,0 +1,42 @@
+#home-container
+{
+  background-image: url('../img/background.png');
+  background-position: bottom center;
+  height: 100%;
+  width: 100%;
+  padding-top: 7%;
+	box-sizing: border-box;
+}
+
+#home-container #title-container
+{
+  width: 100%;
+  text-align: center;
+}
+#home-container #title-container h1
+{
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+#home-container #text-container
+{
+  width: 100%;
+  text-align: center;
+}
+#home-container #text-container h2
+{
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+#home-container #button-container
+{
+  width: 250px;
+  margin: auto;
+  padding-top: 1.5%;
+}
+#home-container #button-container .button
+{
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1), 0 0 10px 0 rgba(0, 0, 0, 0.1) inset;
+}
+#home-container #button-container .button h3
+{
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
