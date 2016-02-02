@@ -21,7 +21,9 @@
 	</head>
 	<body>
 		<header>
-
+			<ul>
+				<li><h3>Vluds</h3></li>
+			</ul>
 		</header>
 
 		<section id="ajax-loader">
