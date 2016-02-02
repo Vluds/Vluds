@@ -27,23 +27,23 @@ h1
 	font-family: 'OpenSans-Light';
 	font-weight: normal;
 	font-size: 7.5em;
-	color: rgb(56, 56, 56);
+	color: rgba(0, 0, 0, 0.8);
 }
 h2
 {
 	margin: 0;
 	font-family: 'OpenSans-Light';
 	font-weight: normal;
-	font-size: 3em;
-	color: rgb(74, 74, 74);
+	font-size: 2.5em;
+	color: rgba(0, 0, 0, 0.8);
 }
 h3
 {
 	margin: 0;
 	font-family: 'OpenSans-Light';
 	font-weight: normal;
-	font-size: 2em;
-	color: rgb(74, 74, 74);
+	font-size: 1.7em;
+	color: rgba(0, 0, 0, 0.8);
 }
 
 html
@@ -71,10 +71,10 @@ section#ajax-loader #ajax-container
 
 .button
 {
-	height: 55px;
-	line-height: 53px;
+	height: 50px;
+	line-height: 47px;
 	min-width: 150px;
-	border: 1px solid rgb(74, 74, 74);
+	border: 1px solid rgba(238, 238, 238, 0.8);
 	border-radius: 50px;
 	box-sizing: border-box;
 	text-align: center;
