@@ -28,6 +28,7 @@ h1
 	font-weight: normal;
 	font-size: 7.5em;
 	color: rgba(0, 0, 0, 0.8);
+	line-height: 100%;
 }
 h2
 {
@@ -36,6 +37,7 @@ h2
 	font-weight: normal;
 	font-size: 2.5em;
 	color: rgba(0, 0, 0, 0.8);
+	line-height: 100%;
 }
 h3
 {
@@ -81,4 +83,12 @@ section#ajax-loader #ajax-container
 	padding-left: 10px;
 	padding-right: 10px;
 	cursor: pointer;
+}
+
+.vertical-align
+{
+	height: 100%;
+	width: 0;
+	display: inline-block;
+	vertical-align: middle;
 }

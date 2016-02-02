@@ -1,46 +1,82 @@
 #home-container
 {
-  background-color: rgb(41, 212, 185);
-  background-image: url('../img/background.png');
-  background-position: center center;
-  background-size: 100% 100%;
-  height: 100%;
   width: 100%;
-  padding-top: 5%;
+  height: 200%;
 	box-sizing: border-box;
 }
 
-#home-container #title-container
+#home-container #infos-container
+{
+  background-color: rgb(41, 212, 185);
+  background-image: url('../img/background.png');
+  background-position: 0% 70%;
+  background-size: cover;
+	box-sizing: border-box;
+  height: 50%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+#home-container #infos-container #infos-vertical-container
+{
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+  margin-top: 7%;
+}
+#home-container #infos-container #title-container
 {
   width: 100%;
   text-align: center;
 }
-#home-container #title-container h1
+#home-container #infos-container #title-container h1
 {
   text-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 	color: rgba(56, 56, 56, 0.8);
 }
-#home-container #text-container
+#home-container #infos-container #text-container
 {
   width: 100%;
   text-align: center;
 }
-#home-container #text-container h2
+#home-container #infos-container #text-container h2
 {
   text-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   color: rgba(74, 74, 74, 0.8);
 }
-#home-container #button-container
+#home-container #infos-container #button-container
 {
   width: 250px;
   margin: auto;
   padding-top: 1.5%;
 }
-#home-container #button-container .button
+#home-container #infos-container #button-container .button
 {
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1), 0 0 10px 0 rgba(0, 0, 0, 0.1) inset;
 }
-#home-container #button-container .button h3
+
+#home-container #start-container
+{
+  background-color: rgb(31, 73, 59);
+  text-align: center;
+  height: 50%;
+}
+#home-container #start-container .start-button-container
+{
+  width: 350px;
+  margin: auto;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 17px;
+  margin-right: 17px;
+  margin-bottom: 20px;
+}
+
+#home-container #start-container .start-button-container .start-text-container
+{
+  margin-bottom: 15px;
+}
+
+.button h3
 {
   text-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   color: rgba(238, 238, 238, 0.8);
