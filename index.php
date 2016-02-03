@@ -22,7 +22,7 @@
 	<body>
 		<header>
 			<ul>
-				<li><h3>Vluds</h3></li>
+				<li id="header-icon" onclick="Interface.loadModel('home');"></li>
 			</ul>
 		</header>
 

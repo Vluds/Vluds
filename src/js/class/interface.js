@@ -1,8 +1,10 @@
 var Interface = {
   ajaxContainer: "",
+  ajaxResizableContainer: "",
 
   init: function(){
     this.ajaxContainer = $('#ajax-loader #ajax-container');
+    this.ajaxResizableContainer = $('.ajax-resizable-container');
   },
 
   loadModel: function(modelName){
@@ -25,6 +27,7 @@ var Interface = {
           }
           $(this).load(App.modelsPath+modelName+".php").queue(function(){
             $(this).fadeIn(400);
+            Interface.init();
             $(this).dequeue();
           });
           $(this).dequeue()
@@ -33,7 +36,8 @@ var Interface = {
     }
   },
 
-  scrollDown: function(){
-    $("html, body").animate({ scrollTop: $(document).height() }, 500);
+  resizeAjaxContainer: function(){
+    var ajaxResizableContainerHeight = ajaxResizableContainer.height();
+    ajaxResizableContainer.stop().animate({'margin-top': '-'+ajaxResizableContainerHeight/2}, 200);
   }
 }
