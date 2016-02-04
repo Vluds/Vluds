@@ -44,6 +44,17 @@ var Engine = {
       input.parent().parent().children('.form-check').fadeOut(200);
       input.parent().parent().children('.form-ballot').fadeIn(400);
     }
+  },
+
+  checkFormPassword: function(input){
+    var signupPasswordValue = input.val();
+    if(input.lenght > 6) {
+      input.parent().parent().children('.form-ballot').fadeOut(200);
+      input.parent().parent().children('.form-check').fadeIn(400);
+    }else {
+      input.parent().parent().children('.form-check').fadeOut(200);
+      input.parent().parent().children('.form-ballot').fadeIn(400);
+    }
   }
 }
 
