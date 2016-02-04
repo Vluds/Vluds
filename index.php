@@ -1,3 +1,12 @@
+<?php
+	if(isset($_GET['page']))
+	{
+		$pageName = htmlentities($_GET['page']);
+	}
+	else {
+		$pageName = "home";
+	}
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -30,7 +39,7 @@
 			<div id="ajax-container">
 				<script type="text/javascript">
 					App.init();
-					Interface.loadModel('home');
+					Interface.loadModel('<?php echo $pageName;?>');
 				</script>
 			</div>
 		</section>

@@ -24,9 +24,10 @@ var Interface = {
             $('script.default-animation').after('<script name="'+modelName+'" type="text/javascript" src="'+App.animationsPath+modelName+".js"+'"></script>');
           }
           $(this).load(App.modelsPath+modelName+".php", function() {
+            Engine.historyPushState(modelName);
             Interface.resizeAjaxContainer();
+            $(this).stop().animate({'opacity': '1'}, 600);
           });
-  				$(this).stop().animate({'opacity': '1'}, 600);
           $(this).dequeue();
         });
       }
@@ -35,7 +36,6 @@ var Interface = {
 
   resizeAjaxContainer: function(){
     var ajaxResizableContainerHeight = $('.ajax-resizable-container').height();
-    console.log($('.ajax-resizable-container').height());
     $('.ajax-resizable-container').stop().animate({'margin-top': '-'+ajaxResizableContainerHeight/2}, 200);
   }
 }

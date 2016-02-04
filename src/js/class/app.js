@@ -8,5 +8,6 @@ var App = {
 
   init: function(){
     Interface.init();
+    Engine.init();
   }
 }

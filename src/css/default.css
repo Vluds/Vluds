@@ -33,7 +33,7 @@ h1
 	margin: 0;
 	font-family: 'OpenSans-Light';
 	font-weight: normal;
-	font-size: 7.5em;
+	font-size: 3em;
 	color: rgba(255, 255, 255, 0.9);
 	line-height: 100%;
 }
@@ -52,6 +52,14 @@ h3
 	font-family: 'OpenSans-Light';
 	font-weight: normal;
 	font-size: 1.7em;
+	color: rgba(255, 255, 255, 0.9);
+}
+p
+{
+	margin: 0;
+	font-family: 'OpenSans-Light';
+	font-weight: normal;
+	font-size: 1.em;
 	color: rgba(255, 255, 255, 0.9);
 }
 
@@ -109,11 +117,30 @@ section#ajax-loader #ajax-container
 	overflow: hidden;
 }
 
+input[type="text"], input[type="password"]
+{
+	height: 45px;
+	line-height: 45px;
+	width: 100%;
+	background-color: transparent;
+	border: 1px solid rgba(255, 255, 255, 0.9);
+	border-radius: 50px;
+	box-sizing: border-box;
+	text-align: center;
+	padding-left: 15px;
+	padding-right: 15px;
+
+	font-family: 'OpenSans-Light';
+	font-weight: normal;
+	font-size: 1.7em;
+	color: rgba(255, 255, 255, 0.9);
+}
+
 .button
 {
 	height: 45px;
 	line-height: 43px;
-	min-width: 100px;
+	width: 100%;
 	border: 1px solid rgba(255, 255, 255, 0.9);
 	border-radius: 50px;
 	box-sizing: border-box;
@@ -129,4 +156,23 @@ section#ajax-loader #ajax-container
 	width: 0;
 	display: inline-block;
 	vertical-align: middle;
+}
+
+.form-check
+{
+	display: none;
+	position: absolute;
+	top: 0;
+	right: -30px;
+}
+.form-ballot
+{
+	display: none;
+	position: absolute;
+	top: 0;
+	right: -30px;
+}
+.form-ballot > *
+{
+	color: rgba(223, 52, 52, 0.7);
 }
