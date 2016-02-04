@@ -1,3 +1,3 @@
-$(".ajax-resizable-container").ready(function() {
+$(document).ready(function() {
 
 });

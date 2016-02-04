@@ -1,16 +1,14 @@
 var Interface = {
   ajaxContainer: "",
-  ajaxResizableContainer: "",
 
   init: function(){
     this.ajaxContainer = $('#ajax-loader #ajax-container');
-    this.ajaxResizableContainer = $('.ajax-resizable-container');
   },
 
   loadModel: function(modelName){
     if(modelName){
       if(Engine.fileExists(App.modelsPath+modelName+".php")){
-        this.ajaxContainer.fadeOut(400).queue(function(){
+        this.ajaxContainer.stop().animate({'opacity': '0'}, 400).queue(function(){
           if(Engine.fileExists(App.cssPath+modelName+".css")){
             var currentStylesheet = $('link[name='+modelName+']');
             if(currentStylesheet){
@@ -25,19 +23,19 @@ var Interface = {
             }
             $('script.default-animation').after('<script name="'+modelName+'" type="text/javascript" src="'+App.animationsPath+modelName+".js"+'"></script>');
           }
-          $(this).load(App.modelsPath+modelName+".php").queue(function(){
-            $(this).fadeIn(400);
-            Interface.init();
-            $(this).dequeue();
+          $(this).load(App.modelsPath+modelName+".php", function() {
+            Interface.resizeAjaxContainer();
           });
-          $(this).dequeue()
+  				$(this).stop().animate({'opacity': '1'}, 600);
+          $(this).dequeue();
         });
       }
     }
   },
 
   resizeAjaxContainer: function(){
-    var ajaxResizableContainerHeight = ajaxResizableContainer.height();
-    ajaxResizableContainer.stop().animate({'margin-top': '-'+ajaxResizableContainerHeight/2}, 200);
+    var ajaxResizableContainerHeight = $('.ajax-resizable-container').height();
+    console.log($('.ajax-resizable-container').height());
+    $('.ajax-resizable-container').stop().animate({'margin-top': '-'+ajaxResizableContainerHeight/2}, 200);
   }
 }
