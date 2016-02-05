@@ -7,17 +7,17 @@
   </div>
   <div id="form-container">
     <ul>
-      <li><input id="email" placeholder="EMAIL" type="text"/></li>
+      <li><input id="email" placeholder="Email" type="text"/></li>
       <span class="form-check"><h3>✓</h3></span>
       <span class="form-ballot"><h3>✗</h3></span>
     </ul>
     <ul>
-      <li><input id="username" placeholder="USERNAME" type="text"/></li>
+      <li><input id="username" placeholder="Username" type="text"/></li>
       <span class="form-check"><h3>✓</h3></span>
       <span class="form-ballot"><h3>✗</h3></span>
     </ul>
     <ul>
-      <li><input id="password" placeholder="PASSWORD" type="password"/></li>
+      <li><input id="password" placeholder="Password" type="password"/></li>
       <span class="form-check"><h3>✓</h3></span>
       <span class="form-ballot"><h3>✗</h3></span>
     </ul>

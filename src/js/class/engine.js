@@ -37,7 +37,7 @@ var Engine = {
   checkFormUsername: function(input){
     var signupUsernameValue = input.val();
     var Exp = /^([0-9]|[a-z])+([0-9a-z]+)$/i;
-    if((signupUsernameValue.match(Exp)) && (input.lenght > 4)) {
+    if((signupUsernameValue.match(Exp)) && (signupUsernameValue.lenght > 4)) {
       input.parent().parent().children('.form-ballot').fadeOut(200);
       input.parent().parent().children('.form-check').fadeIn(400);
     }else {
@@ -48,7 +48,7 @@ var Engine = {
 
   checkFormPassword: function(input){
     var signupPasswordValue = input.val();
-    if(input.lenght > 6) {
+    if(signupPasswordValue.lenght > 6) {
       input.parent().parent().children('.form-ballot').fadeOut(200);
       input.parent().parent().children('.form-check').fadeIn(400);
     }else {

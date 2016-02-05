@@ -1,0 +1,5 @@
+Options +FollowSymlinks
+RewriteEngine On
+
+RewriteRule ^home  index.php?page=home [NC,L]
+RewriteRule ^signup  index.php?page=signup [NC,L]

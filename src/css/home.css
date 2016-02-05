@@ -22,11 +22,13 @@
   background-size: auto 100%;
   margin: auto;
   margin-bottom: 20px;
+  opacity: 0.8;
 }
 #home-container #infos-container #text-container
 {
   width: 100%;
   text-align: center;
+  opacity: 0.9;
 }
 #home-container #infos-container #button-container
 {
