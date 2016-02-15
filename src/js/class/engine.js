@@ -70,12 +70,8 @@ var Engine = {
   },
 
   signUp: function(email, username, password){
-    $.post(App.phpClassPath+"app.php", { action: "signUp", email: email, username: username, password: password }, function(data){
-      if(data.result){
-        Interface.loadModel('home');
-      }else {
-
-      }
+    $.post(App.phpClassPath+"app.php", { className: "User", functionName: "signUp", email: email, username: username, password: password }, function(data){
+      console.log(data);
     }, "json");
   }
 }
