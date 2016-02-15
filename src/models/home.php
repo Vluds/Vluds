@@ -8,10 +8,10 @@
       </div>
       <div id="button-container">
         <div class="button" onclick="Interface.loadModel('signup');">
-          <h3>SIGN UP</h3>
+          <h4>SIGN UP</h4>
         </div>
         <div class="button" onclick="Interface.loadModel('login');">
-          <h3>LOG IN</h3>
+          <h4>LOG IN</h4>
         </div>
       </div>
   </div>

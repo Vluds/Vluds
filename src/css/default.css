@@ -31,7 +31,7 @@ ul
 h1
 {
 	margin: 0;
-	font-family: 'OpenSans-Light';
+	font-family: 'OpenSans-Regular';
 	font-weight: normal;
 	font-size: 3em;
 	color: rgba(255, 255, 255, 0.9);
@@ -52,6 +52,14 @@ h3
 	font-family: 'OpenSans-Light';
 	font-weight: normal;
 	font-size: 1.7em;
+	color: rgba(255, 255, 255, 0.9);
+}
+h4
+{
+	margin: 0;
+	font-family: 'OpenSans-Light';
+	font-weight: normal;
+	font-size: 1.3em;
 	color: rgba(255, 255, 255, 0.9);
 }
 p
@@ -91,6 +99,8 @@ header ul
 {
 	height: 45px;
 	padding-top: 15px;
+	display: inline-block;
+	vertical-align: middle;
 }
 header ul li
 {
@@ -134,26 +144,26 @@ input[type="email"], input[type="text"], input[type="password"]
 
 	font-family: 'OpenSans-Light';
 	font-weight: normal;
-	font-size: 1.5em;
+	font-size: 1.3em;
 	color: rgba(255, 255, 255, 0.9);
 }
-input[type="email"]:placeholder-shown, input[type="text"]:placeholder-shown, input[type="password"]:placeholder-shown {
+input:placeholder-shown {
   color: rgba(255, 255, 255, 0.6);
 }
-input[type="email"]::-webkit-input-placeholder, input[type="text"]::-webkit-input-placeholder, input[type="password"]::-webkit-input-placeholder {
+input::-webkit-input-placeholder {
   color: rgba(255, 255, 255, 0.6);
 }
-input[type="email"]::-moz-placeholder, input[type="text"]::-moz-placeholder, input[type="password"]::-moz-placeholder {
+input::-moz-placeholder {
   color: rgba(255, 255, 255, 0.6);
 }
-input[type="email"]:-ms-input-placeholder, input[type="text"]:-ms-input-placeholder, input[type="password"]:-ms-input-placeholder {
+input:-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.6);
 }
 
 .button
 {
 	height: 45px;
-	line-height: 43px;
+	line-height: 44px;
 	width: 100%;
 	border: 1px solid rgba(255, 255, 255, 0.9);
 	border-radius: 50px;
@@ -162,6 +172,22 @@ input[type="email"]:-ms-input-placeholder, input[type="text"]:-ms-input-placehol
 	padding-left: 10px;
 	padding-right: 10px;
 	cursor: pointer;
+}
+.button > *
+{
+	display: inline-block;
+	vertical-align: top;
+}
+.button .button-icon
+{
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 7px;
+}
+.button .button-icon img
+{
+	display: inline-block;
+	vertical-align: -8px;
 }
 
 .vertical-align

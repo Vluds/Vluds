@@ -1,9 +1,17 @@
 <div class="ajax-resizable-container" id="signup-container">
   <div id="title-container">
-    <h1>SIGN UP</h1>
+    <h1>Sign Up</h1>
   </div>
   <div id="text-container">
-    <h3>Complete these fields to begin</h3>
+    <h3>Choose a registration mode with</h3>
+  </div>
+  <div id="form-fb-container">
+    <ul>
+      <li><div class="button" onclick="signUpFBUser();"><span class="button-icon"><img src="src/img/FB-f-Logo__white_29.png"/></span><h4>FACEBOOK</h4></div></li>
+    </ul>
+  </div>
+  <div id="form-separator">
+    <h3>OR</h3>
   </div>
   <div id="form-container">
     <ul>
@@ -26,7 +34,7 @@
       <span class="form-ballot"><h3>✗</h3></span>
     </ul>
     <ul id="button-container">
-      <li><div class="button"><h3>READY</h3></div></li>
+      <li><div class="button"><h4>READY</h4></div></li>
     </ul>
   </div>
 </div>

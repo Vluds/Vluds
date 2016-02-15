@@ -9,18 +9,34 @@
 {
   width: 100%;
   text-align: center;
+  margin-bottom: 4px;
 }
 #signup-container #text-container
 {
   width: 100%;
   text-align: center;
+  margin-bottom: 20px;
 }
+#signup-container #form-fb-container
+{
+  width: 250px;
+  margin: auto;
+  text-align: center;
+}
+
+#signup-container #form-separator
+{
+  margin: auto;
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+}
+
 #signup-container #form-container
 {
   width: 250px;
   margin: auto;
   text-align: center;
-  margin-top: 20px;
 }
 #signup-container #form-container ul
 {

@@ -21,6 +21,7 @@
 		<script type="text/javascript" src="src/js/class/app.js"></script>
 		<script type="text/javascript" src="src/js/class/interface.js"></script>
 		<script type="text/javascript" src="src/js/class/engine.js"></script>
+		<script type="text/javascript" src="src/js/class/facebook.js"></script>
 
 		<!--Animation Scripts-->
 		<script class="default-animation" type="text/javascript" src="src/animations/default.js"></script>
@@ -32,6 +33,9 @@
 		<header>
 			<ul>
 				<li id="header-icon" onclick="Interface.loadModel('home');"></li>
+			</ul>
+			<ul>
+				<li><div id="status"></div></li>
 			</ul>
 		</header>
 

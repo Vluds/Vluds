@@ -67,6 +67,16 @@ var Engine = {
       input.parent().parent().children('.form-error').fadeIn(400);
       input.parent().parent().children('.form-ballot').fadeIn(400);
     }
+  },
+
+  signUp: function(email, username, password){
+    $.post(App.phpClassPath+"app.php", { action: "signUp", email: email, username: username, password: password }, function(data){
+      if(data.result){
+        Interface.loadModel('home');
+      }else {
+
+      }
+    }, "json");
   }
 }
 
