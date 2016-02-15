@@ -24,35 +24,47 @@ var Engine = {
   },
 
   checkFormEmail: function(input){
-    var signupEmailValue = input.val();
-    if((signupEmailValue.indexOf('@') > -1) && (signupEmailValue.indexOf('.') > -1)) {
+    var emailValue = input.val();
+    var emailValueLenght = input.val().length;
+
+    if((emailValue.indexOf('@') > -1) && (emailValue.indexOf('.') > -1)) {
+      input.parent().parent().children('.form-error').fadeOut(200);
       input.parent().parent().children('.form-ballot').fadeOut(200);
       input.parent().parent().children('.form-check').fadeIn(400);
-    }else {
+    }else if(emailValueLenght > 0) {
       input.parent().parent().children('.form-check').fadeOut(200);
+      input.parent().parent().children('.form-error').fadeIn(400);
       input.parent().parent().children('.form-ballot').fadeIn(400);
     }
   },
 
   checkFormUsername: function(input){
-    var signupUsernameValue = input.val();
+    var usernameValue = input.val();
+    var usernameValueLenght = input.val().length;
+
     var Exp = /^([0-9]|[a-z])+([0-9a-z]+)$/i;
-    if((signupUsernameValue.match(Exp)) && (signupUsernameValue.lenght > 4)) {
+    if((usernameValue.match(Exp)) && (usernameValueLenght >= 4)) {
+      input.parent().parent().children('.form-error').fadeOut(200);
       input.parent().parent().children('.form-ballot').fadeOut(200);
       input.parent().parent().children('.form-check').fadeIn(400);
-    }else {
+    }else if(usernameValueLenght > 0) {
       input.parent().parent().children('.form-check').fadeOut(200);
+      input.parent().parent().children('.form-error').fadeIn(400);
       input.parent().parent().children('.form-ballot').fadeIn(400);
     }
   },
 
   checkFormPassword: function(input){
-    var signupPasswordValue = input.val();
-    if(signupPasswordValue.lenght > 6) {
+    var passwordValue = input.val();
+    var passwordValueLenght = input.val().length;
+
+    if(passwordValueLenght >= 6) {
+      input.parent().parent().children('.form-error').fadeOut(200);
       input.parent().parent().children('.form-ballot').fadeOut(200);
       input.parent().parent().children('.form-check').fadeIn(400);
-    }else {
+    }else if(passwordValueLenght > 0) {
       input.parent().parent().children('.form-check').fadeOut(200);
+      input.parent().parent().children('.form-error').fadeIn(400);
       input.parent().parent().children('.form-ballot').fadeIn(400);
     }
   }

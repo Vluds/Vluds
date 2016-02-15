@@ -74,7 +74,7 @@ body
 	width: 100%;
 	margin: 0;
 	background-color: rgb(41, 212, 186);
-	background: linear-gradient(rgb(41, 212, 186), rgb(212, 143, 41));
+	background: linear-gradient(rgb(41, 181, 212), rgb(36, 242, 144));
 }
 
 header
@@ -118,7 +118,7 @@ section#ajax-loader #ajax-container
 	overflow: hidden;
 }
 
-input[type="text"], input[type="password"]
+input[type="email"], input[type="text"], input[type="password"]
 {
 	height: 45px;
 	line-height: 45px;
@@ -130,11 +130,24 @@ input[type="text"], input[type="password"]
 	text-align: center;
 	padding-left: 15px;
 	padding-right: 15px;
+	outline: none;
 
 	font-family: 'OpenSans-Light';
 	font-weight: normal;
 	font-size: 1.5em;
 	color: rgba(255, 255, 255, 0.9);
+}
+input[type="email"]:placeholder-shown, input[type="text"]:placeholder-shown, input[type="password"]:placeholder-shown {
+  color: rgba(255, 255, 255, 0.6);
+}
+input[type="email"]::-webkit-input-placeholder, input[type="text"]::-webkit-input-placeholder, input[type="password"]::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+input[type="email"]::-moz-placeholder, input[type="text"]::-moz-placeholder, input[type="password"]::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+input[type="email"]:-ms-input-placeholder, input[type="text"]:-ms-input-placeholder, input[type="password"]:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .button
@@ -159,6 +172,17 @@ input[type="text"], input[type="password"]
 	vertical-align: middle;
 }
 
+.form-error
+{
+	background-color: rgba(223, 52, 52, 0.7);
+	height: 35px;
+	line-height: 35px;
+	border-radius: 50px;
+	margin-top: 5px;
+
+	display: none;
+}
+
 .form-check
 {
 	display: none;
@@ -175,7 +199,7 @@ input[type="text"], input[type="password"]
 	display: none;
 	position: absolute;
 	top: 0;
-	right: -25px;
+	right: -30px;
 }
 .form-ballot > *
 {
