@@ -128,6 +128,41 @@ section#ajax-loader #ajax-container
 	overflow: hidden;
 }
 
+#background-container{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.4);
+
+	display: none;
+}
+#background-container #notification-popup-container{
+	position: relative;
+	margin: auto;
+	top: 50%;
+	min-width: 300px;
+	width: 30%;
+	background-color: rgba(255, 255, 255, 0.4);
+	border-radius: 25px;
+	padding-top: 10px;
+	padding-bottom: 15px;
+	padding-left: 20px;
+	padding-right: 20px;
+	box-sizing: border-box;
+	overflow: hidden;
+
+	display: none;
+}
+#background-container #notification-popup-container #button-container{
+	margin-top: 15px;
+}
+#background-container #notification-popup-container #button-container .button{
+	width: 19%;
+	float: right;
+}
+
 .ajax-resizable-container{
 	width: 100%;
 	box-sizing: border-box;

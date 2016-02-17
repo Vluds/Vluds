@@ -1,8 +1,12 @@
 var Interface = {
   ajaxContainer: "",
+  notificationPopUp: "",
+  backgroundContainer: "",
 
   init: function(){
     this.ajaxContainer = $('#ajax-loader #ajax-container');
+    this.notificationPopUp = $('#notification-popup-container');
+    this.backgroundContainer = $('#background-container');
   },
 
   loadModel: function(modelName, argPage){
@@ -39,5 +43,22 @@ var Interface = {
   resizeAjaxContainer: function(){
     var ajaxResizableContainerHeight = $('.ajax-resizable-container').height();
     $('.ajax-resizable-container').stop().animate({'margin-top': '-'+ajaxResizableContainerHeight/2}, 200);
+  },
+
+  showPopUp: function(title, text){
+    $('#title-container h3', $('#notification-popup-container')).html(title);
+    $('#text-container p', $('#notification-popup-container')).html(text);
+
+    $('#background-container').fadeIn(200).queue(function(){
+      $('#notification-popup-container').fadeIn(400);
+      $(this).dequeue();
+    });
+  },
+
+  closePopUp: function(){
+    $('#notification-popup-container').fadeOut(200).queue(function(){
+      $('#background-container').fadeOut(400);
+      $(this).dequeue();
+    });
   }
 }

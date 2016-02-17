@@ -71,14 +71,23 @@ var Engine = {
 
   signUp: function(userID, email, username, password){
     $.post(App.phpClassPath+"app.php", { className: "User", functionName: "signUp", userID: userID, email: email, username: username, password: password }, function(data){
-      console.log(data);
+      if(!data.error){
+        Interface.showPopUp('Information', data.reply);
+        Interface.loadModel('login');
+      }else {
+        Interface.showPopUp('Error', data.reply);
+        Interface.loadModel('login');
+      }
     }, "json");
   },
 
   logIn: function(userID, email, password){
     $.post(App.phpClassPath+"app.php", { className: "User", functionName: "logIn", userID: userID, email: email, password: password }, function(data){
       if(!data.error){
+        Interface.showPopUp('Information', data.reply);
         Interface.loadModel('session');
+      }else {
+        Interface.showPopUp('Error', data.reply);
       }
     }, "json");
   }

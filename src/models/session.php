@@ -3,7 +3,7 @@
   if(User::isUserSession()){
 ?>
     <div id="title-container">
-      <h1>Hey !</h1>
+      <h1>Hey <?php echo User::getUsername();?> !</h1>
     </div>
     <div id="text-container">
       <h3>Welcome to your session !</h3>

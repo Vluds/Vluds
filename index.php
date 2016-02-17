@@ -51,5 +51,14 @@
 		<footer>
 
 		</footer>
+
+		<div id=background-container>
+			<div id="notification-popup-container">
+				<div id="title-container"><h3>One Title</h3></div>
+				<div id="text-container"><p>Some Text</p></div>
+				<div id="button-container"><div class="button" onclick="Interface.closePopUp()"><h4>OK</h4></div>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>

@@ -40,6 +40,23 @@ class User{
     }
   }
 
+  public static function getUsername(){
+    if(self::isUserSession()){
+      $Db = new DataBase();
+      $UserInfos = $Db->select("username", "users", "WHERE token LIKE '".self::getToken()."' AND token_time LIKE '".self::getTokenTime()."'");
+      $isUserTokenExist = $Db->num_rows($UserInfos);
+      if($isUserTokenExist == 1) {
+        $getUserInfos = $Db->fetch_array($UserInfos);
+        $username = $getUserInfos['username'];
+      }else {
+        $username = null;
+      }
+    }else {
+      $username = null;
+    }
+    return $username;
+  }
+
   public static function startUserSession($userID, $isLongLive){
     if((isset($userID) AND !empty($userID)) AND (isset($isLongLive))){
       $Db = new DataBase();
@@ -58,7 +75,7 @@ class User{
       $Db->update("users", "token = '".$user_token."', token_time = '".$user_token_time."'", "WHERE userID LIKE '".$userID."'");
 
       self::$dataArray['error'] = false;
-      self::$dataArray['reply'] = "User is now logged !";
+      self::$dataArray['reply'] = "Now you are logged on ".self::getUsername()." ! :)";
     }else {
       self::$dataArray['error'] = true;
       self::$dataArray['reply'] = "userID or isLongLive not set !";
@@ -97,7 +114,7 @@ class User{
       self::$dataArray['reply'] = "User ".$POST_email.":".$POST_username." registred with ip ".$ip." !";
     }else {
       self::$dataArray['error'] = true;
-      self::$dataArray['reply'] = "User ".$POST_email.":".$POST_username." exists !";
+      self::$dataArray['reply'] = "User ".$POST_email.":".$POST_username." already registred !";
     }
 
     return self::$dataArray;
