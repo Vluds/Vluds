@@ -3,3 +3,5 @@ RewriteEngine On
 
 RewriteRule ^home  index.php?page=home [NC,L]
 RewriteRule ^signup  index.php?page=signup [NC,L]
+RewriteRule ^login  index.php?page=login [NC,L]
+RewriteRule ^session  index.php?page=session [NC,L]
