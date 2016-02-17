@@ -69,9 +69,17 @@ var Engine = {
     }
   },
 
-  signUp: function(email, username, password){
-    $.post(App.phpClassPath+"app.php", { className: "User", functionName: "signUp", email: email, username: username, password: password }, function(data){
+  signUp: function(userID, email, username, password){
+    $.post(App.phpClassPath+"app.php", { className: "User", functionName: "signUp", userID: userID, email: email, username: username, password: password }, function(data){
       console.log(data);
+    }, "json");
+  },
+
+  logIn: function(userID, email, password){
+    $.post(App.phpClassPath+"app.php", { className: "User", functionName: "logIn", userID: userID, email: email, password: password }, function(data){
+      if(!data.error){
+        Interface.loadModel('session');
+      }
     }, "json");
   }
 }
