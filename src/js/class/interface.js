@@ -11,7 +11,7 @@ var Interface = {
 
   loadModel: function(modelName, argPage){
     if(modelName){
-      if(Engine.fileExists(App.modelsPath+modelName+".php")){
+
         this.ajaxContainer.stop().animate({'opacity': '0'}, 400).queue(function(){
           if(Engine.fileExists(App.cssPath+modelName+".css")){
             var currentStylesheet = $('link[name='+modelName+']');
@@ -36,7 +36,7 @@ var Interface = {
           }, "json");
           $(this).dequeue();
         });
-      }
+    
     }
   },
 

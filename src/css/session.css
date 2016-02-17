@@ -1,0 +1,43 @@
+#session-container{
+  width: 100%;
+  padding-top: 2%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+#template-panel{
+  margin-top: 2%;
+}
+#template-panel #template-container{
+  height: 250px;
+  overflow: hidden;
+}
+
+#template-panel #template-panel-text{
+  padding-bottom: 10px;
+}
+#template-panel .template{
+  height: 250px;
+  width: 180px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  border-color: rgba(255, 255, 255, 0.4);
+  display: inline-block;
+  vertical-align: top;
+  overflow: hidden;
+  margin-right: 10px;
+  box-shadow: 0 5px 0 0 rgba(255, 255, 255, 0.2);
+  box-sizing: border-box;
+}
+#template-panel .template .template-overlay{
+  height: 100%;
+  width: 100;
+}
+#template-panel .template .template-overlay{
+  height: 100%;
+  width: 100;
+}
+#template-panel .template .template-overlay .overlay-text h1{
+  line-height: 245px;
+  font-weight: bold;
+}

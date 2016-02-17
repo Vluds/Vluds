@@ -1,4 +1,4 @@
-<div id="session-container">
+<div id="template-panel-container">
 <?php
   if(User::isUserSession()){
 ?>
