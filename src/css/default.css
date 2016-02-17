@@ -148,16 +148,16 @@ input[type="email"], input[type="text"], input[type="password"]
 	color: rgba(255, 255, 255, 0.9);
 }
 input:placeholder-shown {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.8);
 }
 input::-webkit-input-placeholder {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.8);
 }
 input::-moz-placeholder {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.8);
 }
 input:-ms-input-placeholder {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .button
@@ -187,7 +187,7 @@ input:-ms-input-placeholder {
 .button .button-icon img
 {
 	display: inline-block;
-	vertical-align: -8px;
+	vertical-align: -9px;
 }
 
 .vertical-align

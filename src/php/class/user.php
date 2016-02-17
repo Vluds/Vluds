@@ -24,6 +24,12 @@ class User{
   		else {
   		    $ip = $_SERVER['REMOTE_ADDR'];
   		}
+      
+      if(isset($POST_password) AND !empty($POST_password)){
+        $POST_password = password_hash($POST_password, PASSWORD_BCRYPT, ["cost" => 10]);
+      }else {
+        $POST_password = null;
+      }
 
       $Db->insert("users", "email, username, password, ip", "'".$POST_email."', '".$POST_username."', '".$POST_password."', '".$ip."'");
 

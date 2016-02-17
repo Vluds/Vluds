@@ -79,7 +79,7 @@ function signUpFBUser() {
     if (response.authResponse) {
       FB.api('/me?fields=email,name', function(response) {
         console.log('Successful login for: ' + response.name);
-        Engine.signUp(response.email, response.name, null);
+        Engine.signUp(response.id, response.email, response.name, null);
       });
     }
   }, {scope: 'email'});

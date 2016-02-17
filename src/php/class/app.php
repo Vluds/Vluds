@@ -13,12 +13,9 @@
     $functionName = $Db->real_escape_string($_POST['functionName']);
 
     $arrayPost = array();
-    foreach($_POST as $cle=>$value)
-    {
-      if(($cle !== "className") AND ($cle !== "functionName"))
-      {
-        if(isset($_POST[$cle]) && !empty($_POST[$cle]))
-        {
+    foreach($_POST as $cle=>$value) {
+      if(($cle !== "className") AND ($cle !== "functionName"))| {
+        if(isset($_POST[$cle]) && !empty($_POST[$cle])) {
           $arrayPost[$cle] .= $Db->real_escape_string($_POST[$cle]);
         }
       }
