@@ -1,10 +1,3 @@
-<?php
-  if(User::isUserSession()){
-?>
-    <script>Interface.loadModel('session');</script>
-<?php
-  }else{
-?>
 <div class="ajax-resizable-container" id="home-container">
   <div id="infos-container">
       <div id="title-container">
@@ -23,6 +16,3 @@
       </div>
   </div>
 </div>
-<?php
-}
-?>

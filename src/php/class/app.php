@@ -3,7 +3,6 @@
 
   require('db.php');
   require('user.php');
-  require('engine.php');
 
   $Db = new DataBase();
 
@@ -15,11 +14,9 @@
 
     $arrayPost = array();
     foreach($_POST as $cle=>$value) {
-      if(($cle !== "className") AND ($cle !== "functionName")) {
+      if(($cle !== "className") AND ($cle !== "functionName"))| {
         if(isset($_POST[$cle]) && !empty($_POST[$cle])) {
-          $arrayPost[$cle] = $Db->real_escape_string($_POST[$cle]);
-        }else {
-          $arrayPost[$cle] = null;
+          $arrayPost[$cle] .= $Db->real_escape_string($_POST[$cle]);
         }
       }
     }

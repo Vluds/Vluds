@@ -1,4 +1,4 @@
-<div class="user-form ajax-resizable-container" id="signup-container">
+<div class="ajax-resizable-container" id="signup-container">
   <div id="title-container">
     <h1>Sign Up</h1>
   </div>

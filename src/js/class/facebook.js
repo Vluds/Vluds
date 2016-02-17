@@ -8,7 +8,7 @@
    // for FB.getLoginStatus().
    if (response.status === 'connected') {
      // Logged into your app and Facebook.
-     logInFBUser();
+     connectFBUser();
    } else if (response.status === 'not_authorized') {
      // The person is logged into Facebook, but not your app.
      console.log('Please log into this app.');
@@ -49,6 +49,9 @@
  //
  // These three cases are handled in the callback function.
 
+ FB.getLoginStatus(function(response) {
+   statusChangeCallback(response);
+ });
 
  };
 
@@ -64,15 +67,11 @@
  // Here we run a very simple test of the Graph API after login is
  // successful.  See statusChangeCallback() for when this call is made.
 
-function logInFBUser() {
-  FB.login(function(response) {
-    if (response.authResponse) {
-      FB.api('/me?fields=email,name', function(response) {
-        console.log('Successful login for: ' + response.name);
-        Engine.logIn(response.id, response.email, null);
-      });
-    }
-  }, {scope: 'email'});
+function connectFBUser() {
+ console.log('Welcome!  Fetching your information.... ');
+ FB.api('/me', function(response) {
+   console.log('Successful login for: ' + response.name);
+ });
 }
 
 function signUpFBUser() {

@@ -5,7 +5,7 @@ var Interface = {
     this.ajaxContainer = $('#ajax-loader #ajax-container');
   },
 
-  loadModel: function(modelName, argPage){
+  loadModel: function(modelName){
     if(modelName){
       if(Engine.fileExists(App.modelsPath+modelName+".php")){
         this.ajaxContainer.stop().animate({'opacity': '0'}, 400).queue(function(){
@@ -23,13 +23,11 @@ var Interface = {
             }
             $('script.default-animation').after('<script name="'+modelName+'" type="text/javascript" src="'+App.animationsPath+modelName+".js"+'"></script>');
           }
-          $.post(App.phpClassPath+"app.php", { className: "Engine", functionName: "loadModel", modelName: modelName, argPage: argPage }, function(data){
-            if(!data.error){
-              Interface.ajaxContainer.html(data.reply).stop().animate({'opacity': '1'}, 600);
-              Engine.historyPushState(modelName);
-              Interface.resizeAjaxContainer();
-            }
-          }, "json");
+          $(this).load(App.modelsPath+modelName+".php", function() {
+            Engine.historyPushState(modelName);
+            Interface.resizeAjaxContainer();
+            $(this).stop().animate({'opacity': '1'}, 600);
+          });
           $(this).dequeue();
         });
       }

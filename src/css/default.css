@@ -128,49 +128,6 @@ section#ajax-loader #ajax-container
 	overflow: hidden;
 }
 
-.ajax-resizable-container{
-	width: 100%;
-	box-sizing: border-box;
-	position: relative;
-	top: 50%;
-}
-
-.user-form #title-container{
-  width: 100%;
-  text-align: center;
-  margin-bottom: 4px;
-}
-.user-form #text-container{
-  width: 100%;
-  text-align: center;
-  margin-bottom: 20px;
-}
-.user-form #form-fb-container{
-  width: 250px;
-  margin: auto;
-  text-align: center;
-}
-.user-form #form-separator{
-  margin: auto;
-  width: 100%;
-  text-align: center;
-  margin-top: 10px;
-}
-.user-form #form-container{
-  width: 250px;
-  margin: auto;
-  text-align: center;
-}
-.user-form #form-container ul{
-  margin-top: 10px;
-  margin-bottom: 10px;
-  position: relative;
-}
-.user-form #form-container #button-container{
-  margin-top: 25px;
-}
-
-
 input[type="email"], input[type="text"], input[type="password"]
 {
 	height: 45px;
@@ -194,7 +151,7 @@ input:placeholder-shown {
   color: rgba(255, 255, 255, 0.8);
 }
 input::-webkit-input-placeholder {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.8);
 }
 input::-moz-placeholder {
   color: rgba(255, 255, 255, 0.8);
