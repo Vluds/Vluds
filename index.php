@@ -31,13 +31,29 @@
 	</head>
 	<body>
 		<header>
-			<ul>
-				<li id="header-icon" onclick="Interface.loadModel('home');"></li>
-			</ul>
-			<ul>
-				<li><div id="status"></div></li>
-			</ul>
+			<nav>
+				<ul>
+					<li id="header-icon" onclick="Interface.loadModel('home');"></li>
+				</ul>
+				<ul id="right-ul">
+					<li>
+						<div class="button" onclick="Interface.loadModel('login');">
+		          <h4>LOG IN</h4>
+		        </div>
+					</li>
+				</ul>
+			</nav>
 		</header>
+
+		<section id="nav-bar">
+			<nav>
+				<ul>
+					<li><h4>SESSION</h4></li>
+					<li><h4>TEMPLATES</h4></li>
+					<li onclick="Engine.logOutUser();"><h4>DISCONNECT</h4></li>
+				</ul>
+			</nav>
+		</section>
 
 		<section id="ajax-loader">
 			<div id="ajax-container">

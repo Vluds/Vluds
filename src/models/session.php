@@ -2,6 +2,7 @@
 <?php
   if(User::isUserSession()){
 ?>
+    <script>Interface.showNavBar();</script>
     <div id="title-container">
       <h1>Hey <?php echo User::getUsername();?> !</h1>
     </div>
@@ -10,7 +11,7 @@
     </div>
     <div id="template-panel">
       <div id="template-panel-text">
-        <h4>Template Panel</h4>
+        <h4>Templates Panel</h4>
       </div>
       <div id="templates-container">
         <div class="button template">

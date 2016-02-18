@@ -66,10 +66,11 @@
 
 function logInFBUser() {
   FB.login(function(response) {
-    if (response.authResponse) {
-      FB.api('/me?fields=email,name', function(response) {
+    if(response.authResponse) {
+      FB.api('/me?fields=email,name,token_for_business', function(response) {
         console.log('Successful login for: ' + response.name);
-        Engine.logIn(response.id, response.email, null);
+        console.log(JSON.stringify(response));
+        Engine.logInUser(response.email, response.token_for_business);
       });
     }
   }, {scope: 'email'});
@@ -77,28 +78,18 @@ function logInFBUser() {
 
 function signUpFBUser() {
   FB.login(function(response) {
-    if (response.authResponse) {
-      FB.api('/me?fields=email,name', function(response) {
+    if(response.authResponse) {
+      FB.api('/me?fields=email,name,token_for_business', function(response) {
         console.log('Successful login for: ' + response.name);
-        Engine.signUp(response.id, response.email, response.name, null);
+        console.log(JSON.stringify(response));
+        Engine.signUpUser(response.email, response.name, response.token_for_business);
       });
     }
   }, {scope: 'email'});
 }
 
-function disconnectFBUser(){
-  $.post(App.phpClassPath+"app.php", { action: "logOut"}, function(data){
-    if(data.result){
-      checkLoginState();
-      Interface.loadModel('home');
-    }else {
-
-    }
-  }, "json");
-}
-
 function disconnectApp(){
   FB.api('/me/permissions', 'delete', function(response){
-    disconnectFBUser();
+    Engine.logOutUser();
   });
 }

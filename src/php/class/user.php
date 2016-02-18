@@ -64,10 +64,16 @@ class User{
       $user_token = self::genToken();
       $user_token_time = time();
 
-      if($isLongLive){
+      if(!$isLongLive){
         $_SESSION['user_token'] = $user_token;
         $_SESSION['user_token_time'] = $user_token_time;
       }else{
+        if(isset($_COOKIE['user_token'])){
+          unset($_COOKIE['user_token']);
+        }
+        if(isset($_COOKIE['user_token_time'])){
+          unset($_COOKIE['user_token_time']);
+        }
         setcookie ("user_token", $user_token, time() + 3600, '/');
         setcookie ("user_token_time", $user_token_time, time() + 3600, '/');
       }
@@ -84,37 +90,46 @@ class User{
     return self::$dataArray;
   }
 
+  public static function closeUserSession(){
+    $Db = new DataBase();
+
+    $Db->update("users", "token = '', token_time = ''", "WHERE token LIKE '".self::getToken()."'");
+
+    $_SESSION = array();
+    session_destroy();
+    unset($_COOKIE['user_token']);
+    unset($_COOKIE['user_token_time']);
+
+    self::$dataArray['error'] = false;
+    self::$dataArray['reply'] = "You are now logged off ".self::getUsername()." ! :)";
+
+    return self::$dataArray;
+  }
+
   public static function signUp($argArray){
     foreach ($argArray as $key => $value) {
       ${'POST_'.$key} = $value;
     }
+    if((isset($POST_email) AND !empty($POST_email)) AND (isset($POST_username) AND !empty($POST_username)) AND (isset($POST_password) AND !empty($POST_password))){
+      $Db = new DataBase();
+      $UserInfos = $Db->select("*", "users", "WHERE email LIKE '".$POST_email."' OR username LIKE '".$POST_username."'");
+      $isUserExist = $Db->num_rows($UserInfos);
+      if($isUserExist <= 0) {
+    		$ip = $_SERVER['REMOTE_ADDR'];
 
-    $Db = new DataBase();
-    $UserInfos = $Db->select("*", "users", "WHERE email LIKE '".$POST_email."' OR username LIKE '".$POST_username."'");
-    $isUserExist = $Db->num_rows($UserInfos);
-    if($isUserExist <= 0) {
-  		$ip = $_SERVER['REMOTE_ADDR'];
-
-      if(isset($POST_password) AND !empty($POST_password)){
         $POST_password = password_hash($POST_password, PASSWORD_BCRYPT, ["cost" => 10]);
+
+        $Db->insert("users", "email, username, password, ip", "'".$POST_email."', '".$POST_username."', '".$POST_password."', '".$ip."'");
+
+        self::$dataArray['error'] = false;
+        self::$dataArray['reply'] = "User ".$POST_email.":".$POST_username." registred with ip ".$ip." !";
       }else {
-        $POST_password = null;
+        self::$dataArray['error'] = true;
+        self::$dataArray['reply'] = "User ".$POST_email.":".$POST_username." already registred !<br/>Click on \"LOG IN\" button !";
       }
-
-      if(isset($POST_userID) AND !empty($POST_userID)){
-        $POST_userID = $POST_userID;
-      }else {
-        $POST_userID = preg_replace("/[^A-Za-z0-9 ]/", '', strtolower($POST_username));
-        $POST_userID = preg_replace(' ', '.', $POST_userID);
-      }
-
-      $Db->insert("users", "userID, email, username, password, ip", "'".$POST_userID."', '".$POST_email."', '".$POST_username."', '".$POST_password."', '".$ip."'");
-
-      self::$dataArray['error'] = false;
-      self::$dataArray['reply'] = "User ".$POST_email.":".$POST_username." registred with ip ".$ip." !";
     }else {
       self::$dataArray['error'] = true;
-      self::$dataArray['reply'] = "User ".$POST_email.":".$POST_username." already registred !";
+      self::$dataArray['reply'] = "Some fields are empty !";
     }
 
     return self::$dataArray;
@@ -125,21 +140,27 @@ class User{
       ${'POST_'.$key} = $value;
     }
 
-    $Db = new DataBase();
+    if((isset($POST_email) AND !empty($POST_email)) AND (isset($POST_password) AND !empty($POST_password))){
+      $Db = new DataBase();
 
-    if(isset($POST_password) AND !empty($POST_password)){
-      $UserInfos = $Db->select("*", "users", "WHERE email LIKE '".$POST_email."' AND password LIKE '".$POST_password."'");
-    }else {
-      $UserInfos = $Db->select("*", "users", "WHERE email LIKE '".$POST_email."' AND userID LIKE '".$POST_userID."'");
-    }
+      $UserInfos = $Db->select("*", "users", "WHERE email LIKE '".$POST_email."'");
 
-    $isUserExist = $Db->num_rows($UserInfos);
-    if($isUserExist == 1) {
-      $getUserInfos = $Db->fetch_array($UserInfos);
-      self::$dataArray = self::startUserSession($getUserInfos['userID'], false);
+      $isUserExist = $Db->num_rows($UserInfos);
+      if($isUserExist == 1) {
+        $getUserInfos = $Db->fetch_array($UserInfos);
+        if(password_verify($POST_password, $getUserInfos['password'])){
+          self::$dataArray = self::startUserSession($getUserInfos['userID'], false);
+        }else{
+          self::$dataArray['error'] = true;
+          self::$dataArray['reply'] = "Invalid password !";
+        }
+      }else {
+        self::$dataArray['error'] = true;
+        self::$dataArray['reply'] = "Invalid user !";
+      }
     }else {
       self::$dataArray['error'] = true;
-      self::$dataArray['reply'] = "Invalid credentials !";
+      self::$dataArray['reply'] = "Some fields are empty !";
     }
 
     return self::$dataArray;

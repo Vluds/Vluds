@@ -1,6 +1,6 @@
 <div class="user-form ajax-resizable-container" id="signup-container">
   <div id="title-container">
-    <h1>Sign Up</h1>
+    <h1>Get Started</h1>
   </div>
   <div id="text-container">
     <h3>Choose a registration mode with</h3>
@@ -13,7 +13,7 @@
   <div id="form-separator">
     <h3>OR</h3>
   </div>
-  <div id="form-container">
+  <div id="form-container" class="form-container">
     <ul>
       <li><input id="email" placeholder="Email" type="email"/></li>
       <div class="form-error"><p>Email is not valid !</p></div>
@@ -34,7 +34,7 @@
       <span class="form-ballot"><h3>✗</h3></span>
     </ul>
     <ul id="button-container">
-      <li><div class="button"><h4>READY</h4></div></li>
+      <li><div class="button" onclick="Engine.signUpUserForm($(this));"><h4>READY</h4></div></li>
     </ul>
   </div>
 </div>

@@ -69,20 +69,19 @@ var Engine = {
     }
   },
 
-  signUp: function(userID, email, username, password){
-    $.post(App.phpClassPath+"app.php", { className: "User", functionName: "signUp", userID: userID, email: email, username: username, password: password }, function(data){
+  signUpUser: function(userID, email, username, password){
+    $.post(App.phpClassPath+"app.php", { className: "User", functionName: "signUp", email: email, username: username, password: password }, function(data){
       if(!data.error){
         Interface.showPopUp('Information', data.reply);
         Interface.loadModel('login');
       }else {
         Interface.showPopUp('Error', data.reply);
-        Interface.loadModel('login');
       }
     }, "json");
   },
 
-  logIn: function(userID, email, password){
-    $.post(App.phpClassPath+"app.php", { className: "User", functionName: "logIn", userID: userID, email: email, password: password }, function(data){
+  logInUser: function(userID, email, password){
+    $.post(App.phpClassPath+"app.php", { className: "User", functionName: "logIn", email: email, password: password }, function(data){
       if(!data.error){
         Interface.showPopUp('Information', data.reply);
         Interface.loadModel('session');
@@ -90,6 +89,35 @@ var Engine = {
         Interface.showPopUp('Error', data.reply);
       }
     }, "json");
+  },
+
+  logOutUser: function(){
+    $.post(App.phpClassPath+"app.php", { className: "User", functionName: "closeUserSession"}, function(data){
+      if(!data.error){
+        Interface.showPopUp('Information', data.reply);
+        Interface.loadModel('home');
+        Interface.closeNavBar();
+      }else {
+        Interface.showPopUp('Error', data.reply);
+      }
+    }, "json");
+  },
+
+  logInUserForm: function(inputForm){
+    var formContainer = inputForm.closest('.form-container');
+    var inputEmailValue = formContainer.find('input#email').val();
+    var inputPasswordValue = formContainer.find('input#password').val();
+
+    this.logInUser(null, inputEmailValue, inputPasswordValue);
+  },
+
+  signUpUserForm: function(inputForm){
+    var formContainer = inputForm.closest('.form-container');
+    var inputEmailValue = formContainer.find('input#email').val();
+    var inputUsernameValue = formContainer.find('input#username').val();
+    var inputPasswordValue = formContainer.find('input#password').val();
+
+    this.signUpUser(null, inputEmailValue, inputUsernameValue, inputPasswordValue);
   }
 }
 

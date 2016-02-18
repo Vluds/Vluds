@@ -13,7 +13,7 @@
   <div id="form-separator">
     <h3>OR</h3>
   </div>
-  <div id="form-container">
+  <div id="form-container" class="form-container">
     <ul>
       <li><input id="email" placeholder="Email" type="email"/></li>
       <div class="form-error"><p>Email is not valid !</p></div>
@@ -27,7 +27,7 @@
       <span class="form-ballot"><h3>✗</h3></span>
     </ul>
     <ul id="button-container">
-      <li><div class="button"><h4>READY</h4></div></li>
+      <li><div class="button" onclick="Engine.logInUserForm($(this));"><h4>READY</h4></div></li>
     </ul>
   </div>
 </div>
