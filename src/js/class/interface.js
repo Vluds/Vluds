@@ -47,7 +47,8 @@ var Interface = {
     $('.ajax-resizable-container').stop().animate({'margin-top': '-'+(ajaxResizableContainerHeight/2)-headerHeight}, 200);
 
     var notificationPopUpHeight = $('#notification-popup-container').height();
-    $('#notification-popup-container').stop().animate({'margin-top': '-'+(notificationPopUpHeight/2)-headerHeight}, 200);
+    var notificationPopUpWidth = $('#notification-popup-container').width();
+    $('#notification-popup-container').stop().animate({'margin-top': '-'+(notificationPopUpHeight/2)}, 200).animate({'margin-left': '-'+(notificationPopUpWidth/2)}, 200);
   },
 
   showPopUp: function(title, text){
@@ -55,7 +56,9 @@ var Interface = {
     $('#text-container p', $('#notification-popup-container')).html(text);
 
     $('#background-container').fadeIn(200);
-    $('#notification-popup-container').fadeIn(400);
+    $('#notification-popup-container').fadeIn(400, function(){
+      resizeAjaxContainer();
+    });
   },
 
   closePopUp: function(){

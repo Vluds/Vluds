@@ -69,7 +69,7 @@ var Engine = {
     }
   },
 
-  signUpUser: function(userID, email, username, password){
+  signUpUser: function(email, username, password){
     $.post(App.phpClassPath+"app.php", { className: "User", functionName: "signUp", email: email, username: username, password: password }, function(data){
       if(!data.error){
         Interface.showPopUp('Information', data.reply);
@@ -80,7 +80,7 @@ var Engine = {
     }, "json");
   },
 
-  logInUser: function(userID, email, password){
+  logInUser: function(email, password){
     $.post(App.phpClassPath+"app.php", { className: "User", functionName: "logIn", email: email, password: password }, function(data){
       if(!data.error){
         Interface.showPopUp('Information', data.reply);

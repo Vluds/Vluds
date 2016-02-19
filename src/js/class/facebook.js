@@ -69,7 +69,6 @@ function logInFBUser() {
     if(response.authResponse) {
       FB.api('/me?fields=email,name,token_for_business', function(response) {
         console.log('Successful login for: ' + response.name);
-        console.log(JSON.stringify(response));
         Engine.logInUser(response.email, response.token_for_business);
       });
     }
@@ -81,7 +80,6 @@ function signUpFBUser() {
     if(response.authResponse) {
       FB.api('/me?fields=email,name,token_for_business', function(response) {
         console.log('Successful login for: ' + response.name);
-        console.log(JSON.stringify(response));
         Engine.signUpUser(response.email, response.name, response.token_for_business);
       });
     }
