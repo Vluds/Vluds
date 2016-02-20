@@ -57,7 +57,7 @@ var Interface = {
 
     $('#background-container').fadeIn(200);
     $('#notification-popup-container').fadeIn(400, function(){
-      resizeAjaxContainer();
+      Interface.resizeAjaxContainer();
     });
   },
 

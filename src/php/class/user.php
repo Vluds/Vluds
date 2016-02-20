@@ -57,8 +57,8 @@ class User{
     return $username;
   }
 
-  public static function startUserSession($userID, $isLongLive){
-    if((isset($userID) AND !empty($userID)) AND (isset($isLongLive))){
+  public static function startUserSession($email, $isLongLive){
+    if((isset($email) AND !empty($email)) AND (isset($isLongLive))){
       $Db = new DataBase();
 
       $user_token = self::genToken();
@@ -78,13 +78,13 @@ class User{
         setcookie ("user_token_time", $user_token_time, time() + 3600, '/');
       }
 
-      $Db->update("users", "token = '".$user_token."', token_time = '".$user_token_time."'", "WHERE userID LIKE '".$userID."'");
+      $Db->update("users", "token = '".$user_token."', token_time = '".$user_token_time."'", "WHERE email LIKE '".$email."'");
 
       self::$dataArray['error'] = false;
       self::$dataArray['reply'] = "Now you are logged on ".self::getUsername()." ! :)";
     }else {
       self::$dataArray['error'] = true;
-      self::$dataArray['reply'] = "userID or isLongLive not set !";
+      self::$dataArray['reply'] = "email or isLongLive not set !";
     }
 
     return self::$dataArray;
@@ -149,7 +149,7 @@ class User{
       if($isUserExist == 1) {
         $getUserInfos = $Db->fetch_array($UserInfos);
         if(password_verify($POST_password, $getUserInfos['password'])){
-          self::$dataArray = self::startUserSession($getUserInfos['userID'], false);
+          self::$dataArray = self::startUserSession($getUserInfos['email'], false);
         }else{
           self::$dataArray['error'] = true;
           self::$dataArray['reply'] = "Invalid password !";
