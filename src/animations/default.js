@@ -3,6 +3,8 @@ $(document).ready(function() {
   var buttonBorderColor;
   var inputBackgroundColor;
   var inputBorderColor;
+  var headerIconOpacity;
+  var userAvatarOpacity;
 
   $(document).on("mouseenter", ".button", function() {
     buttonBackgroundColor = $(this).css('background-color');
@@ -37,6 +39,28 @@ $(document).ready(function() {
     $(this).stop().animate({
       'background-color': inputBackgroundColor,
       'border-color': inputBorderColor
+    }, 400);
+  });
+
+  $(document).on("mouseenter", "#header-icon", function() {
+    headerIconOpacity = $(this).css('opacity');
+    $(this).stop().animate({
+      'opacity': '1'
+    }, 400);
+  }).on("mouseleave", "#header-icon", function() {
+    $(this).stop().animate({
+      'opacity': headerIconOpacity
+    }, 400);
+  });
+
+  $(document).on("mouseenter", ".user-avatar img", function() {
+    userAvatarOpacity = $(this).css('opacity');
+    $(this).stop().animate({
+      'opacity': '1'
+    }, 400);
+  }).on("mouseleave", ".user-avatar img", function() {
+    $(this).stop().animate({
+      'opacity': userAvatarOpacity
     }, 400);
   });
 });

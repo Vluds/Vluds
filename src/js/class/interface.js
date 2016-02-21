@@ -71,10 +71,14 @@ var Interface = {
     var navBarWidth = $('#nav-bar').css('max-width');
     $('#nav-bar').animate({'width': navBarWidth}, 250);
     $('#ajax-loader').animate({'padding-right': navBarWidth}, 250);
+    $('#nav-bar .nav-bar-button#open-nav-bar').fadeOut(100);
+    $('#nav-bar .nav-bar-button#close-nav-bar').fadeIn(100);
   },
 
   closeNavBar: function(){
     $('#nav-bar').animate({'width': 0}, 300);
     $('#ajax-loader').animate({'padding-right': 0}, 300);
+    $('#nav-bar .nav-bar-button#close-nav-bar').fadeOut(100);
+    $('#nav-bar .nav-bar-button#open-nav-bar').fadeIn(100);
   }
 }

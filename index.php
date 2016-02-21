@@ -47,6 +47,18 @@
 
 		<section id="nav-bar">
 			<nav>
+				<div id="close-nav-bar" class="nav-bar-button" onclick="Interface.closeNavBar()"><h4>×</h4></p></div>
+				<div id="open-nav-bar" class="nav-bar-button" onclick="Interface.showNavBar()"><h4>+</h4></div>
+				<ul>
+					<div id="user-infos">
+						<div class="user-avatar">
+							<img alt="Yeah, that's you" src="src/img/avatar.png"/>
+						</div>
+						<div id="user-username">
+							<p>Tim Dusser-Jolly</p>
+						</div>
+					</div>
+				</ul>
 				<ul>
 					<li><h4>SESSION</h4></li>
 					<li><h4>TEMPLATES</h4></li>

@@ -36,5 +36,8 @@
     <ul id="button-container">
       <li><div class="button" onclick="Engine.signUpUserForm($(this));"><h4>READY</h4></div></li>
     </ul>
+    <ul class="back-container">
+      <li><div class="back-arrow"></div></li>
+    </ul>
   </div>
 </div>
