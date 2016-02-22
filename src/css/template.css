@@ -1,0 +1,106 @@
+#template-container{
+  width: 100%;
+  height: 100%;
+  padding-top: 2%;
+  padding-left: 5%;
+  padding-right: 5%;
+  box-sizing: border-box;
+}
+
+.panel{
+  height: 70%;
+}
+.panel .panel-container{
+  padding-left: 0;
+  padding-right: 0;
+}
+#tool-box{
+  width: 7%;
+  height: 100%;
+  float: left;
+  overflow: hidden;
+}
+#tool-box ul{
+  width: 100%;
+  padding-top: 10px;
+}
+#tool-box ul li{
+  width: 85%;
+  margin: auto;
+  margin-bottom: 10px;
+}
+#tool-box ul ul{
+  background-color: transparent;
+  padding: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  display: none;
+}
+#tool-box ul ul li{
+  height: 35px;
+  line-height: 35px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+#edition-area{
+  width: 93%;
+  background-color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+#edition-area .edition-body{
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 1);
+}
+#edition-area .edition-header{
+  background-color: rgba(255, 0, 0, 0.5);
+}
+#edition-area .edition-section{
+  background-color: rgba(0, 255, 0, 0.5);
+}
+#edition-area .edition-footer{
+  background-color: rgba(0, 0, 255, 0.5);
+}
+#edition-area .edition-h1{
+  font-family: 'OpenSans-Regular';
+  margin: 0;
+  font-size: 1.5em;
+  height: 100%;
+  line-height: 200%;
+  color: rgba(255, 255, 255, 1);
+}
+#edition-area .edition-h2{
+  font-family: 'OpenSans-Regular';
+  margin: 0;
+  font-size: 1.2em;
+  height: 100%;
+  line-height: 200%;
+  color: rgba(255, 255, 255, 1);
+}
+
+#edition-area .edition-h3{
+  font-family: 'OpenSans-Regular';
+  margin: 0;
+  font-size: 1em;
+  height: 100%;
+  line-height: 200%;
+  color: rgba(255, 255, 255, 1);
+}
+#edition-area .edition-h4{
+  font-family: 'OpenSans-Regular';
+  margin: 0;
+  font-size: 0.8em;
+  height: 100%;
+  line-height: 200%;
+  color: rgba(255, 255, 255, 1);
+}
+#edition-area .edition-container-responsive{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}

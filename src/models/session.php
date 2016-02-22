@@ -9,12 +9,12 @@
     <div id="text-container">
       <h3>Welcome to your session !</h3>
     </div>
-    <div id="template-panel">
-      <div id="template-panel-text">
+    <div id="template-panel" class="panel">
+      <div class="panel-text">
         <h4>Templates Panel</h4>
       </div>
-      <div id="templates-container">
-        <div class="button template">
+      <div class="panel-container">
+        <div class="button template" onclick="Interface.loadModel('template')">
           <div class="template-overlay">
             <div class="overlay-text">
               <h1>+</h1>
