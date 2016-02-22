@@ -35,7 +35,7 @@
             <div class="edition-block body">
               <div class="edition-block header">
                 <div class="edition-block container-responsive">
-                  <span class="edition-h1">My Website Title</span>
+                  <span class="edition-block h1">My Website Title</span>
                 </div>
               </div>
               <div class="edition-block section">

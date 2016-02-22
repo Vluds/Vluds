@@ -21,9 +21,11 @@ $(document).ready(function() {
     }, 400);
   });
 
-  $(document).on("click", '#edition-area div', function() {
-    $(this).stop().css({
-      'border': '1px solid rgba(255, 0, 0, 1)'
-    }, 200);
+  $(document).on("click", '#edition-area .edition-block.body > .edition-block', function() {
+    if(!$(this).hasClass("selected")){
+      $(this).addClass("selected");
+    }else{
+      $(this).removeClass("selected");
+    }
   });
 });
