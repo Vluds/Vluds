@@ -21,36 +21,33 @@
       <div class="panel-container">
           <div id="tool-box">
             <ul>
-              <li id="" class="button"><p>Container</p></li>
+              <li id="" class="button"><p>Layout</p></li>
               <ul>
-                <li><p>Responsive</p></li>
-                <li><p>Personalize</p></li>
+                <li><p>Simple</p></li>
+                <li><p>Double Vertical</p></li>
+                <li><p>Double Horizontal</p></li>
+                <li><p>Grid</p></li>
               </ul>
             </ul>
             <ul>
-              <li class="button"><p>Text</p></li>
+              <li class="button"><p>Block</p></li>
+              <ul>
+                <li><p>Text</p></li>
+                <li><p>Image</p></li>
+              </ul>
             </ul>
+            <div id="options-box">
+              <div id="options-box-title"><p>None selected</p></div>
+              <div id="options-box-arguments">
+                <ul>
+
+                </ul>
+              </div>
+            </div>
           </div>
           <div id="edition-area">
-            <div class="edition-block body">
-              <div class="edition-block header">
-                <div class="edition-block container-responsive">
-                  <span class="edition-block h1">My Website Title</span>
-                </div>
-              </div>
-              <div class="edition-block section">
-                <div class="edition-block container-responsive">
-                  <span class="edition-block h2">This is the content of my website !</span>
-                </div>
-                <div class="edition-block container-responsive">
-                  <span class="edition-block h3">Look at here !</span>
-                </div>
-              </div>
-              <div class="edition-block footer">
-                <div class="edition-block container-responsive">
-                  <span class="edition-block h4">This is the footer of my website !</span>
-                </div>
-              </div>
+            <div class="edition-layout simple">
+              <div class="edition-text h1 middle">Template 01</div>
             </div>
           </div>
       </div>

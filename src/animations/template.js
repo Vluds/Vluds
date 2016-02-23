@@ -21,11 +21,45 @@ $(document).ready(function() {
     }, 400);
   });
 
-  $(document).on("click", '#edition-area .edition-block.body > .edition-block', function() {
+  $(document).on("click", '#edition-area .edition-layout', function() {
     if(!$(this).hasClass("selected")){
-      $(this).addClass("selected");
+      editionBoxSelect($(this));
     }else{
-      $(this).removeClass("selected");
+      editionBoxUnselect($(this));
     }
   });
+
+  function editionBoxSelect(div){
+    div.addClass("selected");
+
+    var divId = div.attr('class');
+    $('#tool-box #options-box #options-box-title p').html(divId);
+
+    var argArray = new Array (2, ['argName', 'argValue']);
+    var divHeight;
+    var divWidth;
+    if(divHeight = div.css('height')){
+      argArray[0]['argName'] = 'Height';
+      argArray[0]['argValue'] = divHeight;
+    }
+    if(divWidth = div.css('width')){
+      argArray[1]['argName'] = 'Width';
+      argArray[1]['argValue'] = divWidth;
+    }
+
+    $('#tool-box #options-box #options-box-arguments ul').html('');
+
+    var argCount = 0;
+    while(argCount < argArray.length){
+      console.log(argArray[argCount]['argName']);
+      $('#tool-box #options-box #options-box-arguments ul').append('<li><span class="first_arg"><p>'+argArray[argCount]['argName']+' :</p></span><input type="text" value="'+argArray[argCount]['argValue']+'"/></li>');
+      argCount++;
+    }
+  }
+
+  function editionBoxUnselect(div){
+    $('#tool-box #options-box #options-box-title p').html('None selected');
+    $('#tool-box #options-box #options-box-arguments ul').html('');
+    div.removeClass("selected");
+  }
 });
