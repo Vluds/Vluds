@@ -35,7 +35,7 @@ $(document).ready(function() {
     var divId = div.attr('class');
     $('#tool-box #options-box #options-box-title p').html(divId);
 
-    var argArray = new Array (2, ['argName', 'argValue']);
+    var argArray = new Array (['argName', 'argValue'],['argName', 'argValue']);
     var divHeight;
     var divWidth;
     if(divHeight = div.css('height')){
@@ -51,7 +51,6 @@ $(document).ready(function() {
 
     var argCount = 0;
     while(argCount < argArray.length){
-      console.log(argArray[argCount]['argName']);
       $('#tool-box #options-box #options-box-arguments ul').append('<li><span class="first_arg"><p>'+argArray[argCount]['argName']+' :</p></span><input type="text" value="'+argArray[argCount]['argValue']+'"/></li>');
       argCount++;
     }
