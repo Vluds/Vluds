@@ -23,16 +23,21 @@
             <ul>
               <li id="" class="button"><p>Layout</p></li>
               <ul>
-                <li><p>Simple</p></li>
-                <li><p>Double Vertical</p></li>
-                <li><p>Double Horizontal</p></li>
-                <li><p>Grid</p></li>
+                <li name="edition-layout simple"><p>Simple</p></li>
+                <li name="edition-layout doubleV"><p>Double Vertical</p></li>
+                <li name="edition-layout doubleD"><!--AHAH--><p>Double Horizontal</p></li>
+                <li name="edition-layout grid"><p>Grid</p></li>
               </ul>
             </ul>
             <ul>
-              <li class="button"><p>Block</p></li>
+              <li class="button"><p>Text</p></li>
               <ul>
-                <li><p>Text</p></li>
+                <li name="edition-text h1 middle"><p>Text Middle</p></li>
+              </ul>
+            </ul>
+            <ul>
+              <li class="button"><p>Image</p></li>
+              <ul>
                 <li><p>Image</p></li>
               </ul>
             </ul>
@@ -45,10 +50,8 @@
               </div>
             </div>
           </div>
-          <div id="edition-area">
-            <div class="edition-layout simple">
-              <div class="edition-text h1 middle">Template 01</div>
-            </div>
+          <div id="edition-area" name="edition-area">
+
           </div>
       </div>
     </div>

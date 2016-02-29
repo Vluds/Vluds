@@ -1,4 +1,6 @@
-$(document).ready(function() {
+
+  initDragAndDrop();
+
   var toolBoxUlLi = '#tool-box ul li';
 
   $(document).on("mouseenter", toolBoxUlLi, function() {
@@ -61,4 +63,36 @@ $(document).ready(function() {
     $('#tool-box #options-box #options-box-arguments ul').html('');
     div.removeClass("selected");
   }
-});
+
+  function initDragAndDrop(){
+    $( "#edition-area" ).droppable({
+      accept: '#tool-box ul ul li',
+      drop: function(event, ui) {
+         ui.draggable.data('dropped', true);
+         ui.draggable.data('droppedDiv', $(this).attr('name'));
+      }
+    });
+
+    $( ".edition-layout" ).droppable({
+      accept: '#tool-box ul ul li',
+      drop: function(event, ui) {
+         ui.draggable.data('dropped', true);
+         ui.draggable.data('droppedDiv', $(this).attr('name'));
+      }
+    });
+
+    $('#tool-box ul ul li').draggable({
+        revert: true,
+        start: function(event, ui) {
+            ui.helper.data('dropped', false);
+        },
+        stop: function(event, ui) {
+            alert('stop: dropped=' + ui.helper.data('dropped'));
+            var droppedDiv = ui.helper.data('droppedDiv');
+            var draggableName = ui.helper.attr('name');
+
+            $(document).find('[name="'+droppedDiv+'"]').append('<div class="'+draggableName+'" name="'+draggableName+'"><h1>Some Text</h1></div>');
+            initDragAndDrop();
+        }
+    });
+  }
