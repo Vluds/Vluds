@@ -41,13 +41,13 @@
                 <li><p>Image</p></li>
               </ul>
             </ul>
-            <div id="options-box">
-              <div id="options-box-title"><p>None selected</p></div>
-              <div id="options-box-arguments">
-                <ul>
+          </div>
+          <div id="options-box">
+            <div id="options-box-title"><p>None selected</p></div>
+            <div id="options-box-arguments">
+              <ul>
 
-                </ul>
-              </div>
+              </ul>
             </div>
           </div>
           <div id="edition-area" name="edition-area">

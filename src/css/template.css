@@ -14,7 +14,7 @@
 }
 #tool-box{
   width: 13%;
-  height: 100%;
+  height: 50%;
   float: left;
   overflow: hidden;
   position: relative;
@@ -42,30 +42,31 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   margin-bottom: 0;
   text-align: center;
-  cursor: grabbing;
+  cursor: move;
 }
-#tool-box #options-box{
+
+#options-box{
   height: 50%;
-  width: 100%;
-  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  width: 13%;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
   position: absolute;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.1);
-  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.1);
+  z-index: 3;
 }
-#tool-box #options-box #options-box-title{
+#options-box #options-box-title{
   width: 100%;
   padding-top: 5px;
   padding-bottom: 5px;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
 }
-#tool-box #options-box #options-box-title p{
+#options-box #options-box-title p{
   text-align: center;
 }
-#tool-box #options-box #options-box-arguments{
+#options-box #options-box-arguments{
   width: 100%;
 }
-#tool-box #options-box #options-box-arguments ul li{
+#options-box #options-box-arguments ul li{
   width: 100%;
   min-height: 25px;
   line-height: 25px;
@@ -73,18 +74,18 @@
   padding-right: 10px;
   box-sizing: border-box;
 }
-#tool-box #options-box #options-box-arguments ul li span{
+#options-box #options-box-arguments ul li span{
   display: inline-block;
   vertical-align: middle;
 }
-#tool-box #options-box #options-box-arguments ul li span.first_arg{
+#options-box #options-box-arguments ul li span.first_arg{
   float: left;
 }
-#tool-box #options-box #options-box-arguments ul li span.second_arg{
+#options-box #options-box-arguments ul li span.second_arg{
   float: right;
   margin-left: 5px;
 }
-#tool-box #options-box #options-box-arguments ul li input{
+#options-box #options-box-arguments ul li input{
   display: inline-block;
   vertical-align: middle;
   height: 25px;
@@ -94,11 +95,13 @@
 }
 
 #edition-area{
-  width: 100%;
+  width: 87%;
   height: 100%;
+  float: right;
   background-color: rgba(255, 255, 255, 0.5);
   box-sizing: border-box;
   padding-bottom: 45px;
+  z-index: 2;
 }
 
 .edition-layout{

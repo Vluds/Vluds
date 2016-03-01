@@ -1,6 +1,4 @@
 
-  initDragAndDrop();
-
   var toolBoxUlLi = '#tool-box ul li';
 
   $(document).on("mouseenter", toolBoxUlLi, function() {
@@ -87,12 +85,12 @@
             ui.helper.data('dropped', false);
         },
         stop: function(event, ui) {
-            alert('stop: dropped=' + ui.helper.data('dropped'));
+            console.log('stop: dropped=' + ui.helper.data('dropped'));
             var droppedDiv = ui.helper.data('droppedDiv');
             var draggableName = ui.helper.attr('name');
 
             $(document).find('[name="'+droppedDiv+'"]').append('<div class="'+draggableName+'" name="'+draggableName+'"><h1>Some Text</h1></div>');
-            initDragAndDrop();
+            
         }
     });
   }
