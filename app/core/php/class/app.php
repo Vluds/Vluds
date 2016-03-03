@@ -5,8 +5,15 @@
   require('user.php');
   require('engine.php');
 
-  define("ROOT", str_replace('app\core\php\class', '', dirname(__FILE__)));
-  define("VIEW", ROOT.'app\view\\');
+
+  if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
+    define("DIRECTORY_SEPARATOR", '\\');
+  } else {
+    define("DIRECTORY_SEPARATOR", '/');
+  }
+
+  define("ROOT", str_replace('app'.DIRECTORY_SEPARATOR.'core'.DIRECTORY_SEPARATOR.'php'.DIRECTORY_SEPARATOR.'class', '', dirname(__FILE__)));
+  define("VIEW", ROOT.'app'.DIRECTORY_SEPARATOR.'view'.DIRECTORY_SEPARATOR);
 
   $Db = new DataBase();
 
