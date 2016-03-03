@@ -14,20 +14,20 @@
 		<meta charset="utf-8"/>
 
 		<!--Lib Scripts-->
-		<script type="text/javascript" src="src/js/lib/jquery-1.12.0.min.js"></script>
-		<script type="text/javascript" src="src/js/lib/jquery-ui-1.11.4.min.js"></script>
+		<script type="text/javascript" src="app/core/js/lib/jquery-1.12.0.min.js"></script>
+		<script type="text/javascript" src="app/core/js/lib/jquery-ui-1.11.4.min.js"></script>
 
 		<!--Class Scripts-->
-		<script type="text/javascript" src="src/js/class/app.js"></script>
-		<script type="text/javascript" src="src/js/class/interface.js"></script>
-		<script type="text/javascript" src="src/js/class/engine.js"></script>
-		<script type="text/javascript" src="src/js/class/facebook.js"></script>
+		<script type="text/javascript" src="app/core/js/class/app.js"></script>
+		<script type="text/javascript" src="app/core/js/class/interface.js"></script>
+		<script type="text/javascript" src="app/core/js/class/engine.js"></script>
+		<script type="text/javascript" src="app/core/js/class/facebook.js"></script>
 
 		<!--Animation Scripts-->
-		<script class="default-animation" type="text/javascript" src="src/animations/default.js"></script>
+		<script class="default-animation" type="text/javascript" src="public/js/default.js"></script>
 
 		<!--Stylesheets-->
-		<link class="default-stylesheet" name="default" rel="stylesheet" type="text/css" href="src/css/default.css"></link>
+		<link class="default-stylesheet" name="default" rel="stylesheet" type="text/css" href="public/css/default.css"></link>
 	</head>
 	<body>
 		<header>
@@ -71,7 +71,7 @@
 			<div id="ajax-container">
 				<script type="text/javascript">
 					App.init();
-					Interface.loadModel('<?php echo $pageName;?>');
+					Interface.loadTemplate('<?php echo $pageName;?>');
 				</script>
 			</div>
 		</section>
