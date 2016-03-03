@@ -1,9 +1,7 @@
 <?php
-	if(isset($_GET['page']))
-	{
+	if(isset($_GET['page'])) {
 		$pageName = htmlentities($_GET['page']);
-	}
-	else {
+	}else {
 		$pageName = "home";
 	}
 ?>
@@ -52,7 +50,7 @@
 				<ul>
 					<div id="user-infos">
 						<div class="user-avatar">
-							<img alt="Yeah, that's you" src="src/img/avatar.png"/>
+							<img alt="Yeah, that's you" src="public/img/avatar.png"/>
 						</div>
 						<div id="user-username">
 							<p>Tim Dusser-Jolly</p>
@@ -71,7 +69,7 @@
 			<div id="ajax-container">
 				<script type="text/javascript">
 					App.init();
-					Interface.loadTemplate('<?php echo $pageName;?>');
+					Interface.loadTemplate("<?php echo $pageName;?>", null);
 				</script>
 			</div>
 		</section>

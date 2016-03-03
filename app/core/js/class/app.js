@@ -1,16 +1,15 @@
 var App = {
 
-  appPath: "",
-  templatesPath: "src/templates/",
-  cssPath: "src/css/",
-  animationsPath: "src/animations/",
-  phpClassPath: "src/php/class/",
+  rootPath: $(location).attr('href'),
+  viewPath: "app/view/",
+  phpClassPath: "app/core/php/class/",
   ajaxContainer: "",
   modelPage: "",
 
   init: function(){
     Interface.init();
     Engine.init();
-    console.log(this.appPath);
+    console.log(this.rootPath);
+    console.log(this.phpClassPath);
   }
 }

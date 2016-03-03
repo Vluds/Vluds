@@ -5,6 +5,9 @@
   require('user.php');
   require('engine.php');
 
+  define("ROOT", str_replace('app\core\php\class', '', dirname(__FILE__)));
+  define("VIEW", ROOT.'app\view\\');
+
   $Db = new DataBase();
 
   $dataArray = array();

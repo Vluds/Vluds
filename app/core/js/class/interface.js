@@ -12,21 +12,21 @@ var Interface = {
   loadTemplate: function(templateName, argPage){
     if(templateName){
       this.ajaxContainer.stop().animate({'opacity': '0'}, 400).queue(function(){
-        if(Engine.fileExists(App.cssPath+templateName+".css")){
+        if(Engine.fileExists(App.rootPath+App.viewPath+templateName+"/"+templateName+".css")){
           var currentStylesheet = $('link[name='+templateName+']');
           if(currentStylesheet){
             currentStylesheet.remove();
           }
-          $('link.default-stylesheet').after('<link name="'+templateName+'" rel="stylesheet" type="text/css" href="'+App.cssPath+templateName+".css"+'"></link>');
+          $('link.default-stylesheet').after('<link name="'+templateName+'" rel="stylesheet" type="text/css" href="'+App.rootPath+App.viewPath+templateName+"/"+templateName+".css"+'"></link>');
         }
-        if(Engine.fileExists(App.animationsPath+templateName+".js")){
+        if(Engine.fileExists(App.rootPath+App.viewPath+templateName+"/"+templateName+".js")){
           var currentAnimation = $('script[name='+templateName+']');
           if(currentStylesheet){
             currentAnimation.remove();
           }
-          $('script.default-animation').after('<script name="'+templateName+'" type="text/javascript" src="'+App.animationsPath+templateName+".js"+'"></script>');
+          $('script.default-animation').after('<script name="'+templateName+'" type="text/javascript" src="'+App.rootPath+App.viewPath+templateName+"/"+templateName+".js"+'"></script>');
         }
-        $.post(App.phpClassPath+"app.php", { className: "Engine", functionName: "loadModel", templateName: templateName, argPage: argPage }, function(data){
+        $.post(App.rootPath+App.phpClassPath+"app.php", { className: "Engine", functionName: "loadModel", templateName: templateName, argPage: argPage }, function(data){
           if(!data.error){
             Interface.ajaxContainer.html(data.reply).stop().animate({'opacity': '1'}, 600);
             Engine.historyPushState(templateName);
