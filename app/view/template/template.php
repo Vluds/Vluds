@@ -15,7 +15,7 @@
       </div>
       <div class="panel-options">
         <ul>
-          <li><img src="src/img/expand_icon.png" alt="Expand" /></li>
+          <li><img src="<?php echo IMG;?>expand_icon.png" alt="Expand" /></li>
         </ul>
       </div>
       <div class="panel-container">

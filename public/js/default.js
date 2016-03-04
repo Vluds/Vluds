@@ -6,9 +6,13 @@ $(document).ready(function() {
   var headerIconOpacity;
   var userAvatarOpacity;
 
+  var buttonBackgroundColor = $('.button').css('background-color');
+  var buttonBorderColor = $('.button').css('border-left-color');
+
+  var inputBackgroundColor = $('input').css('background-color');
+  var inputBorderColor = $('input').css('border-left-color');
+
   $(document).on("mouseenter", ".button", function() {
-    buttonBackgroundColor = $(this).css('background-color');
-    buttonBorderColor = $(this).css('border-left-color');
     $(this).stop().animate({
       'background-color': 'rgba(255, 255, 255, 0.3)',
       'border-color': 'transparent'
@@ -29,13 +33,11 @@ $(document).ready(function() {
 
     var redirectValue = $(this).attr("href");
     if(redirectValue !== null){
-      Interface.loadTemplate(App.templatesPath+redirectValue);
+      Interface.loadTemplate(redirectValue);
     }
   });
 
   $(document).on("focusin", "input", function() {
-    inputBackgroundColor = $(this).css('background-color');
-    inputBorderColor = $(this).css('border-left-color');
     $(this).stop().animate({
       'background-color': 'rgba(255, 255, 255, 0.3)',
       'border-color': 'transparent'

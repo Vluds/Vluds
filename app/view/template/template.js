@@ -2,9 +2,9 @@
   var toolBoxUlLi = '#tool-box ul li';
 
   $(document).on("mouseenter", toolBoxUlLi, function() {
-    $(this).parent().find('ul').slideDown(200);
+    $(this).parent().find('ul').stop().slideDown(200);
   }).on("mouseleave", "#tool-box ul", function() {
-    $(this).find('ul').slideUp(200);
+    $(this).find('ul').stop().slideUp(200);
   });
 
   var toolBoxUlUlLi = '#tool-box ul ul li';
@@ -90,7 +90,7 @@
             var draggableName = ui.helper.attr('name');
 
             $(document).find('[name="'+droppedDiv+'"]').append('<div class="'+draggableName+'" name="'+draggableName+'"><h1>Some Text</h1></div>');
-            
+
         }
     });
   }
