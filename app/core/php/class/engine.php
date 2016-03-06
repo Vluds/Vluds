@@ -7,11 +7,7 @@ class Engine{
       ${'POST_'.$key} = $value;
     }
 
-    if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
-      $modelFilename = VIEW.$POST_templateName.DIRECTORY_SEPARATOR.$POST_templateName.'.php';
-    } else {
-      $modelFilename = VIEW.$POST_templateName.DIRECTORY_SEPARATOR.$POST_templateName.'.php';
-    }
+    $modelFilename = VIEW.$POST_templateName.DIRECTORY_SEPARATOR.$POST_templateName.'.php';
 
 		if(file_exists($modelFilename)){
 			self::$dataArray['reply'] = "";

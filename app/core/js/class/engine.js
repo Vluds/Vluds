@@ -73,7 +73,7 @@ var Engine = {
     $.post(App.phpClassPath+"app.php", { className: "User", functionName: "signUp", email: email, username: username, password: password }, function(data){
       if(!data.error){
         Interface.showPopUp('Information', data.reply);
-        Interface.loadModel('login');
+        Interface.loadTemplate('login');
       }else {
         Interface.showPopUp('Error', data.reply);
       }
@@ -84,7 +84,7 @@ var Engine = {
     $.post(App.phpClassPath+"app.php", { className: "User", functionName: "logIn", email: email, password: password }, function(data){
       if(!data.error){
         Interface.showPopUp('Information', data.reply);
-        Interface.loadModel('session');
+        Interface.loadTemplate('session');
       }else {
         Interface.showPopUp('Error', data.reply);
       }
@@ -95,7 +95,7 @@ var Engine = {
     $.post(App.phpClassPath+"app.php", { className: "User", functionName: "closeUserSession"}, function(data){
       if(!data.error){
         Interface.showPopUp('Information', data.reply);
-        Interface.loadModel('home');
+        Interface.loadTemplate('home');
         Interface.closeNavBar();
       }else {
         Interface.showPopUp('Error', data.reply);
@@ -123,6 +123,6 @@ var Engine = {
 
 window.onpopstate = function(event){
   if(event.state){
-    Interface.loadModel(event.state.pageName);
+    Interface.loadTemplate(event.state.pageName);
   }
 };

@@ -13,8 +13,9 @@
   }*/
 
   define("ROOT", str_replace('app'.DIRECTORY_SEPARATOR.'core'.DIRECTORY_SEPARATOR.'php'.DIRECTORY_SEPARATOR.'class', '', dirname(__FILE__)));
+  define("WEBROOT", str_replace('app'.DIRECTORY_SEPARATOR.'core'.DIRECTORY_SEPARATOR.'php'.DIRECTORY_SEPARATOR.'class'.DIRECTORY_SEPARATOR.'app.php', '', $_SERVER['SCRIPT_NAME']));
   define("VIEW", ROOT.'app'.DIRECTORY_SEPARATOR.'view'.DIRECTORY_SEPARATOR);
-  define("IMG", ROOT.'public'.DIRECTORY_SEPARATOR.'img'.DIRECTORY_SEPARATOR);
+  define("IMG", WEBROOT.'public'.DIRECTORY_SEPARATOR.'img'.DIRECTORY_SEPARATOR);
 
   $Db = new DataBase();
 
@@ -40,7 +41,7 @@
   }else {
     $dataArray['error'] = "app.php: ! className: not set, functionName: not set !";
   }
-
+  $dataArray['f'] = WEBROOT;
 	echo json_encode($dataArray);
 	session_write_close();
 ?>

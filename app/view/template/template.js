@@ -1,3 +1,4 @@
+  initDragAndDrop();
 
   var toolBoxUlLi = '#tool-box ul li';
 
@@ -33,7 +34,7 @@
     div.addClass("selected");
 
     var divId = div.attr('class');
-    $('#tool-box #options-box #options-box-title p').html(divId);
+    $('#options-box #options-box-title p').html(divId);
 
     var argArray = new Array (['argName', 'argValue'],['argName', 'argValue']);
     var divHeight;
@@ -47,18 +48,18 @@
       argArray[1]['argValue'] = divWidth;
     }
 
-    $('#tool-box #options-box #options-box-arguments ul').html('');
+    $('#options-box #options-box-arguments ul').html('');
 
     var argCount = 0;
     while(argCount < argArray.length){
-      $('#tool-box #options-box #options-box-arguments ul').append('<li><span class="first_arg"><p>'+argArray[argCount]['argName']+' :</p></span><input type="text" value="'+argArray[argCount]['argValue']+'"/></li>');
+      $('#options-box #options-box-arguments ul').append('<li><span class="first_arg"><p>'+argArray[argCount]['argName']+' :</p></span><input type="text" value="'+argArray[argCount]['argValue']+'"/></li>');
       argCount++;
     }
   }
 
   function editionBoxUnselect(div){
-    $('#tool-box #options-box #options-box-title p').html('None selected');
-    $('#tool-box #options-box #options-box-arguments ul').html('');
+    $('#options-box #options-box-title p').html('None selected');
+    $('#options-box #options-box-arguments ul').html('');
     div.removeClass("selected");
   }
 

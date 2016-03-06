@@ -19,18 +19,18 @@ var Interface = {
           }
           $('link.default-stylesheet').after('<link name="'+templateName+'" rel="stylesheet" type="text/css" href="'+App.rootPath+App.viewPath+templateName+"/"+templateName+".css"+'"></link>');
         }
-        if(Engine.fileExists(App.rootPath+App.viewPath+templateName+"/"+templateName+".js")){
-          var currentAnimation = $('script[name='+templateName+']');
-          if(currentStylesheet){
-            currentAnimation.remove();
-          }
-          $('script.default-animation').after('<script name="'+templateName+'" type="text/javascript" src="'+App.rootPath+App.viewPath+templateName+"/"+templateName+".js"+'"></script>');
-        }
         $.post(App.rootPath+App.phpClassPath+"app.php", { className: "Engine", functionName: "loadModel", templateName: templateName, argPage: argPage }, function(data){
           if(!data.error){
             Interface.ajaxContainer.html(data.reply).stop().animate({'opacity': '1'}, 600);
             Engine.historyPushState(templateName);
             Interface.resizeAjaxContainer();
+            if(Engine.fileExists(App.rootPath+App.viewPath+templateName+"/"+templateName+".js")){
+              var currentAnimation = $('script[name='+templateName+']');
+              if(currentStylesheet){
+                currentAnimation.remove();
+              }
+              $('script.default-animation').after('<script name="'+templateName+'" type="text/javascript" src="'+App.rootPath+App.viewPath+templateName+"/"+templateName+".js"+'"></script>');
+            }
           }
         }, "json");
         $(this).dequeue();

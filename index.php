@@ -35,7 +35,7 @@
 				</ul>
 				<ul id="right-ul">
 					<li>
-						<div class="button" onclick="Interface.loadModel('login');">
+						<div class="button" href="login">
 		          <h4>LOG IN</h4>
 		        </div>
 					</li>

@@ -7,7 +7,7 @@
   </div>
   <div id="form-fb-container">
     <ul>
-      <li><div class="button" onclick="signUpFBUser();"><span class="button-icon"><img src="src/img/FB-f-Logo__white_29.png"/></span><h4>FACEBOOK</h4></div></li>
+      <li><div class="button" onclick="signUpFBUser();"><span class="button-icon"><img src="<?php echo IMG;?>FB-f-Logo__white_29.png"/></span><h4>FACEBOOK</h4></div></li>
     </ul>
   </div>
   <div id="form-separator">
