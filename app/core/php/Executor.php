@@ -1,22 +1,6 @@
 <?php
   session_start();
-
-  require('db.php');
-  require('user.php');
-  require('engine.php');
-
-
-  /*if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
-    define("DIRECTORY_SEPARATOR", '\\');
-  } else {
-    define("DIRECTORY_SEPARATOR", '/');
-  }*/
-
-  define("ROOT", str_replace('app'.DIRECTORY_SEPARATOR.'core'.DIRECTORY_SEPARATOR.'php'.DIRECTORY_SEPARATOR.'class', '', dirname(__FILE__)));
-  define("WEBROOT", str_replace('app'.DIRECTORY_SEPARATOR.'core'.DIRECTORY_SEPARATOR.'php'.DIRECTORY_SEPARATOR.'class'.DIRECTORY_SEPARATOR.'app.php', '', $_SERVER['SCRIPT_NAME']));
-  define("VIEW", ROOT.'app'.DIRECTORY_SEPARATOR.'view'.DIRECTORY_SEPARATOR);
-  define("IMG", WEBROOT.'public'.DIRECTORY_SEPARATOR.'img'.DIRECTORY_SEPARATOR);
-
+  require('Database.php');
   $Db = new DataBase();
 
   $dataArray = array();
@@ -35,13 +19,14 @@
         }
       }
     }
-
-    $dataArray = $className::$functionName($arrayPost);
+    require($className.'.php');
+    $classObj = new $className();
+    $dataArray = $classObj->$functionName($arrayPost);
 
   }else {
     $dataArray['error'] = "app.php: ! className: not set, functionName: not set !";
   }
-  $dataArray['f'] = WEBROOT;
+
 	echo json_encode($dataArray);
 	session_write_close();
 ?>

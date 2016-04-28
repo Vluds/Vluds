@@ -1,0 +1,5 @@
+section{
+  background: rgb(184, 0, 39); /* For browsers that do not support gradients */
+  
+  background: radial-gradient(at top, rgb(215, 116, 224) 10%, rgb(222, 165, 227)); /* Standard syntax */
+}
