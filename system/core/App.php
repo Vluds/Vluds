@@ -1,9 +1,5 @@
 <?php
 class App{
-  const LANG = "/var/www/html/vluds/app/lang/";
-  const TEMPLATES = "/var/www/html/vluds/app/templates/";
-  const VIEWS = "/var/www/html/vluds/app/views/";
-
   public $pageName;
   public $viewContent = "";
   public $db;
@@ -14,23 +10,18 @@ class App{
     if(isset($_GET['page'])){
       $this->pageName = $_GET['page'];
     }else {
-      $this->pageName = "";
+      $this->pageName = "null";
     }
   }
 
-  function getLocalLang(){
+  private static function getLocalLang(){
     return "default";
   }
 
-  public static function getLang($langName){
-    require(self::LANG.self::getLocalLang().'.php');
-    if(isset($lang[$langName])){
-      echo $lang[$langName];
-    }
-  }
-
   function loadView($viewName){
-    $viewFilename = self::VIEWS.$viewName.'.php';
+    require(LANG.self::getLocalLang().'.php');
+
+    $viewFilename =VIEWS.$viewName.'.php';
 
     if(file_exists($viewFilename)){
       self::$dataArray = "";
@@ -50,7 +41,9 @@ class App{
         ${'POST_'.$key} = $value;
       }
 
-      $templateFilename = self::TEMPLATES.$POST_templateName.DIRECTORY_SEPARATOR.'index.php';
+      require("..".DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR.LANG.self::getLocalLang().'.php');
+
+      $templateFilename = "..".DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR.TEMPLATES.$POST_templateName.DIRECTORY_SEPARATOR.'index.php';
 
   		if(file_exists($templateFilename)){
   			self::$dataArray['reply'] = "";
@@ -60,7 +53,7 @@ class App{
   			self::$dataArray['reply'] .= ob_get_contents();
   			ob_end_clean();
   		}else {
-  			self::$dataArray['reply'] = "This model does not exist ! path: ".$templateFilename;
+  			self::$dataArray['reply'] = "This template does not exist ! path: ".$templateFilename;
   			self::$dataArray['error'] = true;
   		}
   		return self::$dataArray;

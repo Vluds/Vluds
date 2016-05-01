@@ -1,2 +1,1 @@
-# Vluds
-A beautiful CMS for you.
+# Vluds - alpha

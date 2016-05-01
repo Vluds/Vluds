@@ -1,1 +1,1 @@
-<h1><?php $this->getLang("app-home-title");?></h1>
+<h1><?php echo $lang["app-home-title"];?></h1>

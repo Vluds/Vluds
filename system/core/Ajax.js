@@ -1,8 +1,8 @@
-var App = {
+var Ajax = {
   rootPath: $(location).attr('pathname'),
   pagePath: $(location).attr('pathname').split('/')[2],
   templatesPath: "app/templates/",
-  phpCorePath: "app/core/php/",
+  corePath: "system/core/",
   modelPage: "",
   ajaxContainer: "",
 
@@ -20,17 +20,19 @@ var App = {
           }
           $('link.default-stylesheet').after('<link name="'+templateName+'" rel="stylesheet" type="text/css" href="'+this.templatesPath+templateName+"/"+"style.css"+'"></link>');
         }
-        $.post(this.phpCorePath+"Executor.php", { className: "App", functionName: "loadTemplate", templateName: templateName }, function(data){
+        $.post(this.corePath+"Executor.php", { className: "App", functionName: "loadTemplate", templateName: templateName }, function(data){
           if(!data.error){
-            App.ajaxContainer.html(data.reply).stop().animate({'opacity': '1'}, 600);
+            Ajax.ajaxContainer.html(data.reply).stop().animate({'opacity': '1'}, 600);
 
-            if(App.fileExists(App.templatesPath+templateName+"/script.js")){
+            if(Ajax.fileExists(Ajax.templatesPath+templateName+"/script.js")){
               var currentAnimation = $('script[name='+templateName+']');
               if(currentStylesheet){
                 currentAnimation.remove();
               }
-              $('script.default-animation').after('<script name="'+templateName+'" type="text/javascript" src="'+App.templatesPath+templateName+"script.js"+'"></script>');
+              $('script.default-animation').after('<script name="'+templateName+'" type="text/javascript" src="'+Ajax.templatesPath+templateName+"/script.js"+'"></script>');
             }
+          }else{
+            Ajax.ajaxContainer.html(data.error).stop().animate({'opacity': '1'}, 600);
           }
         }, "json");
 
