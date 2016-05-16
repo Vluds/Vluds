@@ -1,5 +1,52 @@
-section{
-  background: rgb(184, 0, 39); /* For browsers that do not support gradients */
+#ajax-container{
+  background: rgb(230, 210, 210); /* Standard syntax */
+}
 
-  background: radial-gradient(at top, rgb(230, 210, 210) 10%, rgb(242, 233, 233)); /* Standard syntax */
+#home-container{
+
+}
+
+.icon-large{
+    background-image: url("../../../public/img/icon_large.png");
+    width: 226px;
+    height: 72px;
+    margin: auto;
+    margin-bottom: 35px;
+}
+
+.home-separator{
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url("../../../public/img/loading-separator.png");
+  height: 51px;
+  width: 10px;
+}
+
+.avatar-container{
+  position: relative;
+  width: 105px;
+  height: 105px;
+  margin-left: 50px;
+  margin-right: 50px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.avatar-img{
+  width: 105px;
+  height: 105px;
+  background-color: rgb(255, 255, 255);
+  background-image: url("../../../public/img/avatar.png");
+  border-radius: 100%;
+}
+.avatar-add{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+  background-image: url("../../../public/img/add.png");
+  background-position: center center;
+  background-size: 100%;
+  background-color: rgb(255, 255, 255);
 }
