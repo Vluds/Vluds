@@ -21,7 +21,7 @@ class App{
   function loadView($viewName){
     require(LANG.self::getLocalLang().'.php');
 
-    $viewFilename =VIEWS.$viewName.'.php';
+    $viewFilename = VIEWS.$viewName.'.php';
 
     if(file_exists($viewFilename)){
       self::$dataArray = "";

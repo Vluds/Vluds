@@ -41,6 +41,7 @@
 		<script type="text/javascript" src="<?php echo JS;?>jquery-ui-1.11.4.min.js"></script>
 
     <script type="text/javascript" src="<?php echo CORE;?>Ajax.js"></script>
+    <script type="text/javascript" src="<?php echo CORE;?>Interface.js"></script>
 
     <!--Animation Scripts-->
 		<script class="default-animation" type="text/javascript" src="public/js/default.js"></script>

@@ -8,6 +8,9 @@ var Ajax = {
 
   init: function(){
     this.ajaxContainer = $("#ajax-container");
+    $(this.ajaxContainer).ready(function() {
+      Ajax.loadTemplate(temlateName);
+    });
   },
 
   loadTemplate: function(templateName){
